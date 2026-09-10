@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Muhammad Butt — Developer Portfolio</title>
+  <meta name="description"
+    content="Personal portfolio of Muhammad Butt — a passionate web &amp; Python developer specializing in Django applications." />
+  <meta name="author" content="Muhammad Butt" />
+  <meta name="keywords" content="Muhammad Butt, Full Stack Developer, Python Developer, Django Developer, Web Developer Portfolio, Software Engineer Pakistan" />
+  <link rel="canonical" href="https://muhammad-1410.github.io/" />
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Muhammad Butt — Developer Portfolio" />
+  <meta property="og:description" content="Explore projects, skills, and full-stack Django web applications built by Muhammad Butt." />
+  <meta property="og:image" content="https://muhammad-1410.github.io/images/profile.jpg" />
+  <meta property="og:url" content="https://muhammad-1410.github.io/" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Muhammad — Developer Portfolio" />
+  <meta name="twitter:description" content="Explore projects, skills, and full-stack Django web applications built by Muhammad Butt." />
+  <meta name="twitter:image" content="https://muhammad-1410.github.io/images/profile.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpg" href="images/favicon.jpg" />
+
+  <!-- JSON-LD Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad",
+    "jobTitle": "Full-Stack Developer",
+    "url": "https://muhammad-1410.github.io/",
+    "sameAs": [
+      "https://github.com/Muhammad-1410",
+      "https://linkedin.com/in/muhammad-butt-6744a7359"
+    ],
+    "knowsAbout": ["Python", "Django", "JavaScript", "HTML", "CSS", "MSSQL", "Software Engineering"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Go to top">Muhammad</a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#skills" aria-label="Jump to Skills section">Skills</a></li>
+        <li><a href="#projects" aria-label="Jump to Projects section">Projects</a></li>
+        <li><a href="#about" aria-label="Jump to About section">About</a></li>
+        <li><a href="#faq" aria-label="Jump to FAQ section">FAQ</a></li>
+        <li><a href="#socials" aria-label="Jump to Socials section">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero" aria-label="Hero introduction">
+    <div class="container hero-content">
+      <div class="hero-status-row">
+        <p class="hero-eyebrow">Available for hire</p>
+        <span class="response-time-pill" title="Guaranteed quick turnarounds">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i> Response Promise: &lt; 24 hrs
+        </span>
+      </div>
+      <h1 class="hero-name">Muhammad</h1>
+      <p class="hero-tagline" id="heroTagline" aria-live="polite">
+        <span class="typewriter-cursor" aria-hidden="true"></span>
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary" aria-label="View my projects" id="ctaProjects">
+          <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+          View Projects
+        </a>
+        <a href="#contact-section" class="btn btn-secondary" aria-label="Contact me directly" id="ctaContact">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+          Contact Me
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-shapes" aria-hidden="true">
+      <span class="shape-star">✦</span>
+      <div class="shape-badge">
+        <img src="images/profile.jpg" alt="Muhammad Butt Profile Photo" class="hero-badge-img" />
+        <div class="hero-badge-tag">FULL STACK DEV</div>
+      </div>
+      <span class="shape-chevron">❯❯</span>
+      <span class="shape-star" style="font-size:1.2rem; animation-direction: reverse;">✦</span>
+    </div>
+  </section>
+
+  <section class="skills" id="skills" aria-label="Skills">
+    <div class="container">
+      <header class="skills-header reveal">
+        <span class="section-label">Expertise</span>
+        <h2 class="section-title">My Skills</h2>
+      </header>
+      <div class="skills-grid reveal-stagger">
+        <article class="skill-card" data-num="01" tabindex="0" aria-label="Skill: Web Development">
+          <h3 class="skill-name">Web Dev</h3>
+          <p class="skill-desc">
+            Building responsive, accessible, and performant
+            websites with modern HTML, CSS, and JavaScript.
+          </p>
+          <div class="skill-level" aria-label="Proficiency: 5 out of 5">
+            <span class="skill-pip filled" title="Level 1"></span>
+            <span class="skill-pip filled" title="Level 2"></span>
+            <span class="skill-pip filled" title="Level 3"></span>
+            <span class="skill-pip filled" title="Level 4"></span>
+            <span class="skill-pip filled" title="Level 5"></span>
+          </div>
+        </article>
+
+        <!-- ── Skill 2: Python Development ── -->
+        <article class="skill-card" data-num="02" tabindex="0" aria-label="Skill: Python Development">
+          <h3 class="skill-name">Python Dev</h3>
+          <p class="skill-desc">
+            Scripting, automation, data processing, and backend
+            services using Python and its rich ecosystem.
+          </p>
+          <div class="skill-level" aria-label="Proficiency: 4 out of 5">
+            <span class="skill-pip filled" title="Level 1"></span>
+            <span class="skill-pip filled" title="Level 2"></span>
+            <span class="skill-pip filled" title="Level 3"></span>
+            <span class="skill-pip filled" title="Level 4"></span>
+            <span class="skill-pip" title="Level 5"></span>
+          </div>
+        </article>
+
+        <!-- ── Skill 3: Django ── -->
+        <article class="skill-card" data-num="03" tabindex="0" aria-label="Skill: Django">
+          <h3 class="skill-name">Django</h3>
+          <p class="skill-desc">
+            Crafting robust web applications with Django — REST
+            APIs, ORM, auth, admin panels, and deployment.
+          </p>
+          <div class="skill-level" aria-label="Proficiency: 4 out of 5">
+            <span class="skill-pip filled" title="Level 1"></span>
+            <span class="skill-pip filled" title="Level 2"></span>
+            <span class="skill-pip filled" title="Level 3"></span>
+            <span class="skill-pip filled" title="Level 4"></span>
+            <span class="skill-pip" title="Level 5"></span>
+          </div>
+        </article>
+
+        <!-- ── Skill 4: Graphics Designing ── -->
+        <article class="skill-card" data-num="04" tabindex="0" aria-label="Skill: Graphics Designing">
+          <h3 class="skill-name">Graphics Design</h3>
+          <p class="skill-desc">
+            Crafting brand identities, UI/UX mockups, digital banners, and visual design assets using Photoshop &amp; Figma.
+          </p>
+          <div class="skill-level" aria-label="Proficiency: 4 out of 5">
+            <span class="skill-pip filled" title="Level 1"></span>
+            <span class="skill-pip filled" title="Level 2"></span>
+            <span class="skill-pip filled" title="Level 3"></span>
+            <span class="skill-pip filled" title="Level 4"></span>
+            <span class="skill-pip" title="Level 5"></span>
+          </div>
+        </article>
+
+        <!-- ── Skill 5: Illustrations ── -->
+        <article class="skill-card" data-num="05" tabindex="0" aria-label="Skill: Illustrations">
+          <h3 class="skill-name">Illustrations</h3>
+          <p class="skill-desc">
+            Creating custom vector art, character designs, creative iconography, and retro visual story elements.
+          </p>
+          <div class="skill-level" aria-label="Proficiency: 4 out of 5">
+            <span class="skill-pip filled" title="Level 1"></span>
+            <span class="skill-pip filled" title="Level 2"></span>
+            <span class="skill-pip filled" title="Level 3"></span>
+            <span class="skill-pip filled" title="Level 4"></span>
+            <span class="skill-pip" title="Level 5"></span>
+          </div>
+        </article>
+
+        <!-- ── Skill 6: Video Editing ── -->
+        <article class="skill-card" data-num="06" tabindex="0" aria-label="Skill: Video Editing">
+          <h3 class="skill-name">Video Editing</h3>
+          <p class="skill-desc">
+            Editing promos, motion graphics, video content, and reel trailers with seamless transitions &amp; timing.
+          </p>
+          <div class="skill-level" aria-label="Proficiency: 4 out of 5">
+            <span class="skill-pip filled" title="Level 1"></span>
+            <span class="skill-pip filled" title="Level 2"></span>
+            <span class="skill-pip filled" title="Level 3"></span>
+            <span class="skill-pip filled" title="Level 4"></span>
+            <span class="skill-pip" title="Level 5"></span>
+          </div>
+        </article>
+
+      </div><!-- /.skills-grid -->
+    </div><!-- /.container -->
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       PROJECTS SECTION
+  ════════════════════════════════════════════════════════ -->
+  <section class="projects" id="projects" aria-label="Projects">
+    <div class="container">
+
+      <header class="projects-header reveal">
+        <span class="section-label">Work</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="projects-intro">
+          A selection of things I've built. Click any card to explore.
+        </p>
+      </header>
+
+      <div class="projects-grid reveal-stagger">
+
+        <!-- ── Project Card 1: E-Commerce Platform ── -->
+        <article class="project-card" tabindex="0" aria-label="Project: E-Commerce Platform">
+          <div class="project-img-wrapper">
+            <img src="images/e_commerce.png" alt="E-Commerce Platform Screenshot" class="project-img" />
+          </div>
+          <span class="project-tag">Django · Python · MSSQL</span>
+          <h3 class="project-title">E-Commerce Platform</h3>
+          <p class="project-desc">
+            A full-featured online store built with Django and MS SQL Server. Includes tech product catalog management, cart counts, wishlist persistence, and order tracking.
+          </p>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="stack-pill">Django</span>
+              <span class="stack-pill">MSSQL</span>
+              <span class="stack-pill">Python</span>
+            </div>
+            <a href="projects/e-commerce.html" class="btn btn-primary btn-sm" aria-label="View E-Commerce Platform project">
+              View <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Project Card 2: Beauty Parlour Management System ── -->
+        <article class="project-card" tabindex="0" aria-label="Project: Beauty Parlour Management System">
+          <div class="project-img-wrapper">
+            <img src="images/beauty_parlour.png" alt="Beauty Parlour Management System Screenshot" class="project-img" />
+          </div>
+          <span class="project-tag">PYTHON 3.12 · DJANGO</span>
+          <h3 class="project-title">Beauty Parlour Management System</h3>
+          <p class="project-desc">
+            A comprehensive management system for beauty parlours and salons — handles online appointment bookings, client records, treatment catalogs, and staff scheduling.
+          </p>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="stack-pill">Python 3.12</span>
+              <span class="stack-pill">Django</span>
+              <span class="stack-pill">MSSQL</span>
+            </div>
+            <a href="projects/beauty-parlour.html" class="btn btn-primary btn-sm" aria-label="View Beauty Parlour Management System project">
+              View <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Project Card 3: School Management System ── -->
+        <article class="project-card" tabindex="0" aria-label="Project: School Management System">
+          <div class="project-img-wrapper">
+            <img src="images/school_management.png" alt="School Management System Screenshot" class="project-img" />
+          </div>
+          <span class="project-tag">Python · Django · MSSQL</span>
+          <h3 class="project-title">School Management System</h3>
+          <p class="project-desc">
+            An all-in-one portal for educational institutions managing student enrollment, HTMX dynamic result grading, teacher schedules, and fee invoice settlements.
+          </p>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="stack-pill">Django</span>
+              <span class="stack-pill">Python</span>
+              <span class="stack-pill">MSSQL</span>
+            </div>
+            <a href="projects/school-management.html" class="btn btn-primary btn-sm" aria-label="View School Management System project">
+              View <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Project Card 4: Employee Tracker ── -->
+        <article class="project-card" tabindex="0" aria-label="Project: Employee Tracker">
+          <div class="project-img-wrapper">
+            <img src="images/employee_tracker.png" alt="Employee Tracker Screenshot" class="project-img" />
+          </div>
+          <span class="project-tag">Python · PyQt5</span>
+          <h3 class="project-title">Employee Tracker</h3>
+          <p class="project-desc">
+            A Python-based desktop application designed to monitor employee activity, track working hours, detect idle time thresholds, record event screenshots, and send email reports.
+          </p>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="stack-pill">Python</span>
+              <span class="stack-pill">PyQt5</span>
+              <span class="stack-pill">Winotify</span>
+            </div>
+            <a href="projects/employee-tracker.html" class="btn btn-primary btn-sm" aria-label="View Employee Tracker project">
+              View <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Project Card 5: Real-Time RayTracer ── -->
+        <article class="project-card" tabindex="0" aria-label="Project: RayTracer App">
+          <div class="project-img-wrapper">
+            <img src="images/ray_tracer.png" alt="Real-Time RayTracer App Screenshot" class="project-img" />
+          </div>
+          <span class="project-tag">C++17 · OpenGL 4.5</span>
+          <h3 class="project-title">RayTracer App</h3>
+          <p class="project-desc">
+            A high-performance C++ real-time ray tracer that simulates photorealistic light physics (reflection, Snell's law refraction, ambient occlusion) at 60 FPS using GLSL compute shaders.
+          </p>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="stack-pill">C++17</span>
+              <span class="stack-pill">OpenGL</span>
+              <span class="stack-pill">GLSL</span>
+            </div>
+            <a href="projects/ray-tracer.html" class="btn btn-primary btn-sm" aria-label="View RayTracer App project">
+              View <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Project Card 6: Library Management System (Replaced SantaRosa Tyre Shop) ── -->
+        <article class="project-card" tabindex="0" aria-label="Project: Library Management System">
+          <div class="project-img-wrapper">
+            <img src="images/library_management.png" alt="Library Management System Screenshot" class="project-img" />
+          </div>
+          <span class="project-tag">Python · MSSQL · Django</span>
+          <h3 class="project-title">Library Management System</h3>
+          <p class="project-desc">
+            A next-generation digital library system built with Python, Django, and MS SQL Server for managing book catalogs, active loans, reservations, and member accounts.
+          </p>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="stack-pill">Python</span>
+              <span class="stack-pill">Django</span>
+              <span class="stack-pill">MSSQL</span>
+            </div>
+            <a href="projects/library-management.html" class="btn btn-primary btn-sm" aria-label="View Library Management System project">
+              View <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Project Card 7: Calculator App ── -->
+        <article class="project-card" tabindex="0" aria-label="Project: Calculator App">
+          <div class="project-img-wrapper">
+            <img src="images/calculator_django.png" alt="Calculator App Screenshot" class="project-img" />
+          </div>
+          <span class="project-tag">Python · Django 6.0</span>
+          <h3 class="project-title">Calculator App</h3>
+          <p class="project-desc">
+            A retro-styled desktop calculator web application built with Python and Django 6.0, featuring arithmetic evaluation, percentage calculation, and dynamic keypad feedback.
+          </p>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="stack-pill">Python</span>
+              <span class="stack-pill">Django 6.0</span>
+              <span class="stack-pill">SQLite</span>
+            </div>
+            <a href="projects/calculator-django.html" class="btn btn-primary btn-sm" aria-label="View Calculator App project">
+              View <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+      </div><!-- /.projects-grid -->
+    </div><!-- /.container -->
+  </section>
+
+
+  <section class="about" id="about" aria-label="About me">
+    <div class="container about-inner">
+
+      <div class="about-text reveal">
+        <span class="section-label">About</span>
+        <h2 class="section-title">Who Am I?</h2>
+
+        <p class="about-bio">
+          Hey! I'm <strong>Muhammad Butt</strong> — a developer who loves turning
+          ideas into polished, working software. I specialise in
+          <strong>Django back-ends</strong> and clean, semantic front-ends,
+          always with an eye on performance and user experience.
+          <br><br>
+          I believe great software is as much about <strong>craft</strong> as
+          it is about logic.
+        </p>
+
+        <div class="about-facts">
+          <div class="fact-row">
+            <span class="fact-label">Name</span>
+            <span class="fact-value">Muhammad Butt</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-label">Education</span>
+            <span class="fact-value">BS Software Engineering(currently studying)</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-label">Location</span>
+            <span class="fact-value">Faisalbad, Pakistan</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-label">Email</span>
+            <span class="fact-value">write2muhammadbutt@gmail.com</span>
+          </div>
+          <div class="fact-row">
+            <span class="fact-label">Status</span>
+            <span class="fact-value" style="color:var(--yellow);">✔ Open to opportunities</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay: 150ms;">
+        <div class="id-card" aria-label="Developer ID Card">
+
+          <div class="id-card-header">
+            <span class="id-card-org">Dev Portfolio™</span>
+            <span class="id-card-type">ID — 2026</span>
+          </div>
+
+          <div class="id-card-body">
+            <div class="id-avatar" aria-label="Muhammad Butt Profile Photo">
+              <img src="images/profile.jpg" alt="Muhammad Butt Profile Photo" />
+            </div>
+
+            <div class="id-details">
+              <p class="id-name">Muhammad<br>Butt</p>
+              <p class="id-field"><span>Role:</span> Full-Stack Developer</p>
+              <p class="id-field"><span>Stack:</span> Python · Django · JS</p>
+              <p class="id-field"><span>Edu:</span> BS Software Engineering(currently studying)</p>
+              <p class="id-field"><span>Year:</span> 2026</p>
+            </div>
+          </div>
+
+          <div class="id-barcode" aria-hidden="true">
+            <div class="barcode-bars">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p class="barcode-num">DEV-2026-[0000]</p>
+          </div>
+
+          <div class="id-stamp" aria-hidden="true">
+            VERIFIED<br>★<br>DEVELOPER
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       FAQ SECTION (Recruiter & Client Q&A)
+  ════════════════════════════════════════════════════════ -->
+  <section class="faq" id="faq" aria-label="Frequently Asked Questions">
+    <div class="container">
+      <header class="faq-header reveal">
+        <span class="section-label">Questions</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="faq-intro">Got questions about my tech stack, workflow, or availability? Here are quick answers.</p>
+      </header>
+
+      <div class="faq-accordion reveal">
+        <details class="faq-item" open>
+          <summary class="faq-question">
+            <span><i class="fa-solid fa-code" aria-hidden="true"></i> What primary technologies do you specialize in?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </summary>
+          <div class="faq-answer">
+            <p>I specialize in <strong>Python &amp; Django backend development</strong> alongside clean, semantic modern HTML5/CSS3 and Vanilla JavaScript on the front end. I also work with MS SQL Server, SQLite, PyQt5 desktop apps, and C++ OpenGL graphic engines.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span><i class="fa-solid fa-clock" aria-hidden="true"></i> What is your availability &amp; response time promise?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </summary>
+          <div class="faq-answer">
+            <p>I am open to full-time roles, internships, and freelance projects. I guarantee a <strong>24-hour response time promise</strong> for all inquiries sent via email or my contact form.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span><i class="fa-solid fa-cubes" aria-hidden="true"></i> How do you approach project architecture &amp; code quality?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </summary>
+          <div class="faq-answer">
+            <p>I prioritize clean, modular code contracts, strict accessibility (WCAG compliant), semantic HTML, responsive design, fast page speed performance, and automated unit testing.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> Can I see live demos or deep-dive details of your work?</span>
+            <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes! Every project card in the Projects section features a dedicated deep-dive page detailing the architecture, database schema, screenshot gallery, and core features.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════
+       CONTACT & GET IN TOUCH SECTION
+  ════════════════════════════════════════════════════════ -->
+  <section class="contact-section" id="contact-section" aria-label="Contact Section">
+    <div class="container">
+      <header class="contact-header reveal">
+        <span class="section-label">Reach Out</span>
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="contact-intro">Have a project in mind, a job opportunity, or just want to chat tech? Drop me a message below!</p>
+      </header>
+
+      <div class="contact-grid reveal">
+        <!-- Left column: Response time guarantee & direct contacts -->
+        <div class="contact-info-card">
+          <div class="response-promise-box">
+            <div class="promise-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
+            <div class="promise-text">
+              <h3>Response Time Guarantee</h3>
+              <p>I personally read and respond to every message within <strong>24 hours</strong>. Guaranteed!</p>
+            </div>
+          </div>
+
+          <ul class="contact-direct-list" role="list">
+            <li>
+              <div class="direct-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+              <div>
+                <span class="direct-label">Email Direct</span>
+                <a href="mailto:write2muhammadbutt@gmail.com" class="direct-val">write2muhammadbutt@gmail.com</a>
+              </div>
+            </li>
+            <li>
+              <div class="direct-icon"><i class="fa-brands fa-github" aria-hidden="true"></i></div>
+              <div>
+                <span class="direct-label">GitHub Profile</span>
+                <a href="https://github.com/Muhammad-1410" target="_blank" rel="noopener noreferrer" class="direct-val">github.com/Muhammad-1410</a>
+              </div>
+            </li>
+            <li>
+              <div class="direct-icon"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></div>
+              <div>
+                <span class="direct-label">LinkedIn Connect</span>
+                <a href="https://linkedin.com/in/muhammad-butt-6744a7359" target="_blank" rel="noopener noreferrer" class="direct-val">linkedin.com/in/muhammad-butt</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right column: Interactive Contact Form with Direct Email Delivery -->
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/write2muhammadbutt@gmail.com" method="POST" aria-label="Contact form">
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_subject" value="🚀 New Message from Developer Portfolio!" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">Your Name <span class="req">*</span></label>
+              <input type="text" id="contactName" name="name" placeholder="e.g. Sarah Connor" required />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Your Email <span class="req">*</span></label>
+              <input type="email" id="contactEmail" name="email" placeholder="e.g. sarah@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <input type="text" id="contactSubject" name="subject" placeholder="e.g. Project Inquiry / Job Opportunity" />
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message <span class="req">*</span></label>
+            <textarea id="contactMessage" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit" id="contactSubmitBtn">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT CONFIRMATION MODAL ── -->
+  <div class="modal-overlay" id="contactModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div class="modal-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
+      <h3 class="modal-title" id="modalTitle">Message Received!</h3>
+      <p class="modal-desc">
+        Thank you for reaching out, <strong id="modalSenderName">Friend</strong>!
+        Your message has been sent successfully. I will get back to you within 24 hours.
+      </p>
+      <button class="btn btn-primary" id="modalOkBtn">Awesome, thanks!</button>
+    </div>
+  </div>
+
+  <!-- ── STICKY MOBILE CTA ── -->
+  <a href="#contact-section" class="sticky-mobile-cta" id="stickyMobileCta" aria-label="Quick Contact button">
+    <i class="fa-solid fa-comments" aria-hidden="true"></i>
+    <span>Contact Me</span>
+  </a>
+
+  <footer class="footer" id="footer" aria-label="Footer and contact">
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <div class="footer-brand">
+          <span class="nav-logo" aria-hidden="true">Muhammad</span>
+          <p>
+            Building things on the web, one commit at a time.
+            Available for freelance &amp; full-time roles.
+          </p>
+        </div>
+
+        <nav aria-label="Footer navigation">
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links-list" role="list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div id="socials">
+          <p class="footer-col-title">Find Me</p>
+          <ul class="social-links" role="list">
+            <li>
+              <a href="https://github.com/Muhammad-1410" class="social-link" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub profile (opens in new tab)">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/muhammad-butt-6744a7359" class="social-link" target="_blank"
+                rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)">
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                LinkedIn
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:write2muhammadbutt@gmail.com" class="social-link" aria-label="Send me an email">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                Email
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © <span id="currentYear"></span>
+          <span>Muhammad Butt</span>
+        </p>
+        <button class="back-to-top" id="backToTop" aria-label="Scroll back to top" title="Back to top">
+          <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

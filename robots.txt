@@ -1,0 +1,6 @@
+# User-agent rules for Muhammad Butt's Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap URL
+Sitemap: https://muhammad-1410.github.io/sitemap.xml

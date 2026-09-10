@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-Time GPU Ray Tracer — Muhammad Butt Portfolio</title>
+  <meta name="description" content="C++ Real-Time GPU Ray Tracer built with OpenGL, GLFW, GLSL, and KD-Trees." />
+
+  <link rel="icon" type="image/jpg" href="../images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">Muhammad</a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="../index.html#projects">← All Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#socials">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="project-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="../index.html#projects">Projects</a>
+        <span>/</span>
+        <span style="color:var(--white);">Real-Time GPU Ray Tracer</span>
+      </nav>
+
+      <span class="project-tag">C++17 · OPENGL 4.5 · GLSL · KD-TREE</span>
+      <h1 class="project-detail-title">Real-Time GPU Ray Tracer</h1>
+      <p class="project-detail-tagline">
+        A high-performance C++ ray tracer engine that simulates photorealistic light physics (reflection, Snell's law refraction, depth of field, and ambient occlusion) in real time at 60 FPS using GLSL compute shaders and NVIDIA discrete GPU acceleration.
+      </p>
+
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="https://github.com/Muhammad-1410" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fa-brands fa-github"></i> View GitHub Repository
+        </a>
+        <a href="../index.html#projects" class="btn btn-secondary">
+          <i class="fa-solid fa-arrow-left"></i> Back to Projects
+        </a>
+      </div>
+
+      <div class="project-meta-grid">
+        <div class="meta-item">
+          <h4>Category</h4>
+          <p>Computer Graphics Engine</p>
+        </div>
+        <div class="meta-item">
+          <h4>Language & Standard</h4>
+          <p>C++17 (MSVC / GCC)</p>
+        </div>
+        <div class="meta-item">
+          <h4>Graphics API</h4>
+          <p>OpenGL 4.5 / GLFW / GLAD</p>
+        </div>
+        <div class="meta-item">
+          <h4>GPU Acceleration</h4>
+          <p>NVIDIA Quadro T2000 (60 FPS)</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-showcase">
+    <div class="container">
+      <header class="skills-header reveal">
+        <span class="section-label">UI Interface Preview</span>
+        <h2 class="section-title">Engine Screenshot</h2>
+      </header>
+
+      <div class="main-screenshot-container reveal">
+        <img src="../images/ray_tracer.png" alt="RayTracer OpenGL Engine Interface Screenshot" />
+      </div>
+
+      <section style="margin-top: 4rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Core Physics & Graphics</span>
+          <h2 class="section-title">Key Capabilities</h2>
+        </header>
+
+        <div class="features-grid reveal-stagger">
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-cubes"></i> KD-Tree Spatial Acceleration</h3>
+            <p>Constructs hierarchical bounding volumes (KD-Trees) in C++ to achieve O(log N) ray-geometry intersection queries for complex scenes.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-microchip"></i> Discrete GPU Direct Export</h3>
+            <p>Exports `NvOptimusEnablement` and `AmdPowerXpressRequestHighPerformance` flags at load time to bypass integrated graphics and lock discrete GPU hardware.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Photorealistic Material Shaders</h3>
+            <p>Implements Fresnel equations, smooth specular metal reflections, glass refraction with index of refraction (IOR), and ACES tone mapping.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-sliders"></i> Dual Engine CPU/GPU Modes</h3>
+            <p>Features dynamic switching between CPU multithreaded raytracing and GPU GLSL path tracing with interactive scene setting controls.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top: 4rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Source Code</span>
+          <h2 class="section-title">GitHub Repository</h2>
+        </header>
+        <div class="feature-card reveal" style="text-align:center; padding: 2.5rem 1.5rem;">
+          <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">
+            <i class="fa-brands fa-github" style="font-size: 2rem; vertical-align: middle; margin-right: 0.5rem;"></i>
+            Explore Source Code on GitHub
+          </h3>
+          <p style="margin-bottom: 1.5rem; max-width: 600px; margin-inline: auto; color: var(--light-gray);">
+            Access the complete repository, project commits, architecture documentation, and codebase on GitHub.
+          </p>
+          <a href="https://github.com/Muhammad-141/RayTracer" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fa-brands fa-github"></i> Open GitHub Repository
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 <span>Muhammad Butt</span> — Real-Time GPU Ray Tracer</p>
+        <a href="../index.html#projects" class="btn btn-secondary btn-sm">Back to Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

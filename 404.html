@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | Muhammad Butt</title>
+  <meta name="description" content="The page you are looking for does not exist or has been moved." />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="icon" type="image/jpg" href="images/favicon.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .error-page {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      position: relative;
+    }
+
+    .error-card {
+      max-width: 620px;
+      width: 100%;
+      background: var(--bg-card);
+      border: 3px solid var(--border-color);
+      box-shadow: 8px 8px 0px var(--shadow-color);
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .error-code {
+      font-family: 'Bungee', cursive;
+      font-size: clamp(5rem, 15vw, 9rem);
+      color: var(--yellow);
+      text-shadow: 4px 4px 0px #000;
+      line-height: 1;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .error-code::after {
+      content: '404';
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      color: var(--accent-pink);
+      z-index: -1;
+    }
+
+    .error-title {
+      font-family: 'Bungee', cursive;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .error-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .error-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 68, 68, 0.15);
+      color: #ff5555;
+      border: 1px solid #ff5555;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Go to homepage">Muhammad</a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#socials">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="error-page">
+    <div class="error-card">
+      <div class="error-badge">
+        <i class="fa-solid fa-triangle-exclamation"></i> ERROR 404 — ROUTE NOT FOUND
+      </div>
+      <div class="error-code">404</div>
+      <h1 class="error-title">Oops! You're Off The Grid</h1>
+      <p class="error-desc">
+        The link you followed might be broken, or the page may have been removed or renamed.
+        Let's get you back on track!
+      </p>
+
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-primary" aria-label="Return to homepage">
+          <i class="fa-solid fa-house" aria-hidden="true"></i> Back To Home
+        </a>
+        <a href="index.html#projects" class="btn btn-secondary" aria-label="View Projects">
+          <i class="fa-solid fa-folder-open" aria-hidden="true"></i> View Projects
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" aria-label="Footer">
+    <div class="container footer-bottom" style="border: none; margin: 0;">
+      <p class="footer-copy">
+        © <span id="currentYear">2026</span> <span>Muhammad Butt</span>
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Management System — Muhammad Butt Portfolio</title>
+  <meta name="description" content="School Management System built with Python, Django, and MS SQL Server." />
+
+  <link rel="icon" type="image/jpg" href="../images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">Muhammad</a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="../index.html#projects">← All Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#socials">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="project-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="../index.html#projects">Projects</a>
+        <span>/</span>
+        <span style="color:var(--white);">School Management System</span>
+      </nav>
+
+      <span class="project-tag">PYTHON · DJANGO · MSSQL</span>
+      <h1 class="project-detail-title">School Management System</h1>
+      <p class="project-detail-tagline">
+        An all-in-one portal for educational institutions managing student enrollment, real-time grading, automated score-to-grade processing, teacher schedules, and fee invoice settlements.
+      </p>
+
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="https://github.com/Muhammad-1410" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fa-brands fa-github"></i> View GitHub Repository
+        </a>
+        <a href="../index.html#projects" class="btn btn-secondary">
+          <i class="fa-solid fa-arrow-left"></i> Back to Projects
+        </a>
+      </div>
+
+      <div class="project-meta-grid">
+        <div class="meta-item">
+          <h4>Category</h4>
+          <p>Educational ERP Portal</p>
+        </div>
+        <div class="meta-item">
+          <h4>Backend Framework</h4>
+          <p>Django 6.0 (Python 3.12)</p>
+        </div>
+        <div class="meta-item">
+          <h4>Database Engine</h4>
+          <p>MS SQL Server / ODBC Driver 18</p>
+        </div>
+        <div class="meta-item">
+          <h4>Key Tech Stack</h4>
+          <p>Python, Django, HTMX, MSSQL, CSS3</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-showcase">
+    <div class="container">
+      <header class="skills-header reveal">
+        <span class="section-label">UI Interface Preview</span>
+        <h2 class="section-title">System Screenshot</h2>
+      </header>
+
+      <div class="main-screenshot-container reveal">
+        <img src="../images/school_management.png" alt="School Management System Dashboard Screenshot" />
+      </div>
+
+      <!-- Multi-Page Application Screenshot Gallery -->
+      <section class="screenshot-gallery reveal">
+        <header class="skills-header">
+          <span class="section-label">Institutional Portals</span>
+          <h2 class="section-title">System Page Gallery</h2>
+        </header>
+
+        <div class="gallery-grid reveal-stagger">
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/school_management_home.png" alt="School Public Portal" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 01 · Public Web</span>
+              <h3 class="page-card-title">School Public Portal</h3>
+              <p class="page-card-desc">Public landing interface highlighting academic announcements, campus vision, admission procedures, and portal login access.</p>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/school_management_dashboard.png" alt="Main Dashboard Console" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 02 · Administration</span>
+              <h3 class="page-card-title">Institutional Dashboard Console</h3>
+              <p class="page-card-desc">Overview matrix showing total active enrollments, revenue stats, pending fee collections, and staff activity streams.</p>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/school_management_students.png" alt="Student Directory" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 03 · Student Records</span>
+              <h3 class="page-card-title">Student Directory & Profiles</h3>
+              <p class="page-card-desc">Comprehensive database directory of enrolled students with search filters, class section assignments, and profile management.</p>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/school_management_student_portal.png" alt="Student Self-Service Portal" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 04 · Student Portal</span>
+              <h3 class="page-card-title">Student Self-Service Portal</h3>
+              <p class="page-card-desc">Student dashboard for viewing report cards, downloading fee invoices, submitting online payments, and password security.</p>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/school_management_results.png" alt="HTMX Grading Workstation" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 05 · Academic Grading</span>
+              <h3 class="page-card-title">HTMX Grading Workstation</h3>
+              <p class="page-card-desc">Real-time dynamic grade calculation desk utilizing HTMX partial updates for instant GPA and letter grade assignments.</p>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/school_management_fees.png" alt="Fee Settlement Desk" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 06 · Financial Desk</span>
+              <h3 class="page-card-title">Fee Invoice Settlement Desk</h3>
+              <p class="page-card-desc">Financial management center for issuing fee vouchers, reviewing payment receipts, and tracking ledger balances.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section style="margin-top: 4rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Core Architecture</span>
+          <h2 class="section-title">Key Capabilities</h2>
+        </header>
+
+        <div class="features-grid reveal-stagger">
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-user-graduate"></i> Student Governance</h3>
+            <p>Complete student lifecycle management including demographic profiling, STU ID assignment, grade level placement, and attendance recording.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-chart-line"></i> Real-Time Result Grading</h3>
+            <p>Automated grade calculation, GPA computation, and HTMX score-to-grade evaluation with dynamic UI updates without page reloads.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-receipt"></i> Fee Invoicing & Receipts</h3>
+            <p>Automated tuition fee invoice generation, status tracking (Paid/Pending), fee collection logs, and audit trails persisted in MS SQL Server.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-database"></i> MSSQL Enterprise Integration</h3>
+            <p>Robust connection with MS SQL Server using ODBC Driver 18, ensuring transactional integrity and high-performance querying for administrative reports.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top: 4rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Source Code</span>
+          <h2 class="section-title">GitHub Repository</h2>
+        </header>
+        <div class="feature-card reveal" style="text-align:center; padding: 2.5rem 1.5rem;">
+          <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">
+            <i class="fa-brands fa-github" style="font-size: 2rem; vertical-align: middle; margin-right: 0.5rem;"></i>
+            Explore Source Code on GitHub
+          </h3>
+          <p style="margin-bottom: 1.5rem; max-width: 600px; margin-inline: auto; color: var(--light-gray);">
+            Access the complete repository, project commits, architecture documentation, and codebase on GitHub.
+          </p>
+          <a href="https://github.com/Muhammad-1410/School-Management-System" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fa-brands fa-github"></i> Open GitHub Repository
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 <span>Muhammad Butt</span> — School Management System</p>
+        <a href="../index.html#projects" class="btn btn-secondary btn-sm">Back to Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

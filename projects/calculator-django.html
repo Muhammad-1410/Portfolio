@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator App — Muhammad Butt Portfolio</title>
+  <meta name="description" content="Calculator Django Web Application built with Python and Django." />
+
+  <link rel="icon" type="image/jpg" href="../images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">Muhammad</a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="../index.html#projects">← All Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#socials">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="project-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="../index.html#projects">Projects</a>
+        <span>/</span>
+        <span style="color:var(--white);">Calculator App</span>
+      </nav>
+
+      <span class="project-tag">PYTHON · DJANGO 6.0 · RETRO UI</span>
+      <h1 class="project-detail-title">CalcVerse (Calculator App)</h1>
+      <p class="project-detail-tagline">
+        A web-based mathematical calculator application styled with a neo-brutalist retro desktop aesthetic, serving real-time evaluation and history logging via Django views.
+      </p>
+
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="https://github.com/Muhammad-1410" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fa-brands fa-github"></i> View GitHub Repository
+        </a>
+        <a href="../index.html#projects" class="btn btn-secondary">
+          <i class="fa-solid fa-arrow-left"></i> Back to Projects
+        </a>
+      </div>
+
+      <div class="project-meta-grid">
+        <div class="meta-item">
+          <h4>Category</h4>
+          <p>Utility Web Application</p>
+        </div>
+        <div class="meta-item">
+          <h4>Backend Framework</h4>
+          <p>Django 6.0.7 (Python 3.12)</p>
+        </div>
+        <div class="meta-item">
+          <h4>Database Engine</h4>
+          <p>SQLite 3</p>
+        </div>
+        <div class="meta-item">
+          <h4>UI Theme</h4>
+          <p>Pixel Art & Neo-Brutalist Desktop</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-showcase">
+    <div class="container">
+      <header class="skills-header reveal">
+        <span class="section-label">UI Interface Preview</span>
+        <h2 class="section-title">System Screenshot</h2>
+      </header>
+
+      <div class="main-screenshot-container reveal">
+        <img src="../images/calculator_django.png" alt="Calculator App Screenshot" />
+      </div>
+
+      <!-- Multi-Page Application Screenshot Gallery -->
+      <section class="screenshot-gallery reveal">
+        <header class="skills-header">
+          <span class="section-label">Calculator Interfaces</span>
+          <h2 class="section-title">System Page Gallery</h2>
+        </header>
+
+        <div class="gallery-grid reveal-stagger">
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/calculator_django_home.png" alt="Calculator Landing Page" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 01 · App Overview</span>
+              <h3 class="page-card-title">Application Landing Page</h3>
+              <p class="page-card-desc">Welcome landing interface presenting calculation engine modes, feature overview, and quick launch triggers.</p>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/calculator_django_calc.png" alt="Interactive Scientific Calculator" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 02 · Calculator Engine</span>
+              <h3 class="page-card-title">Interactive Scientific Calculator</h3>
+              <p class="page-card-desc">Feature-packed calculator keypad interface supporting math expressions, scientific functions, history log, and instant evaluation.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section style="margin-top: 4rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Core Features</span>
+          <h2 class="section-title">Key Capabilities</h2>
+        </header>
+
+        <div class="features-grid reveal-stagger">
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-calculator"></i> Mathematical Engine</h3>
+            <p>Supports standard arithmetic operations (+, -, ×, ÷), percentages, sign toggling, and operator chaining with high precision.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-desktop"></i> Retro Arcade Styling</h3>
+            <p>Designed with retro desktop window borders, pixel fonts, tactile keypress feedback, and clean layout geometry.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-code"></i> Django View Integration</h3>
+            <p>Powered by lightweight Django views handling input processing, state management, and template rendering.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top: 4rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Source Code</span>
+          <h2 class="section-title">GitHub Repository</h2>
+        </header>
+        <div class="feature-card reveal" style="text-align:center; padding: 2.5rem 1.5rem;">
+          <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">
+            <i class="fa-brands fa-github" style="font-size: 2rem; vertical-align: middle; margin-right: 0.5rem;"></i>
+            Explore Source Code on GitHub
+          </h3>
+          <p style="margin-bottom: 1.5rem; max-width: 600px; margin-inline: auto; color: var(--light-gray);">
+            Access the complete repository, project commits, architecture documentation, and codebase on GitHub.
+          </p>
+          <a href="https://github.com/Muhammad-1410/calculator-django" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fa-brands fa-github"></i> Open GitHub Repository
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 <span>Muhammad Butt</span> — Calculator App</p>
+        <a href="../index.html#projects" class="btn btn-secondary btn-sm">Back to Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

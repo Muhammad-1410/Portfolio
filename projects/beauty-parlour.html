@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beauty Parlour Management System — Muhammad Butt Portfolio</title>
+  <meta name="description" content="Beauty Parlour & Salon Management System built with Python, Django, and MS SQL Server." />
+
+  <link rel="icon" type="image/jpg" href="../images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">Muhammad</a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="../index.html#projects">← All Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#socials">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="project-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="../index.html#projects">Projects</a>
+        <span>/</span>
+        <span style="color:var(--white);">Beauty Parlour Management</span>
+      </nav>
+
+      <span class="project-tag">PYTHON 3.12 · DJANGO · BEAUTY & SALON</span>
+      <h1 class="project-detail-title">Beauty Parlour Management System</h1>
+      <p class="project-detail-tagline">
+        An elegant, full-featured management system for beauty parlours, luxury spas, and salons — streamlined booking appointments, client records, treatment procedure catalogs, and staff scheduling.
+      </p>
+
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="https://github.com/Muhammad-1410" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fa-brands fa-github"></i> View GitHub Repository
+        </a>
+        <a href="../index.html#projects" class="btn btn-secondary">
+          <i class="fa-solid fa-arrow-left"></i> Back to Projects
+        </a>
+      </div>
+
+      <div class="project-meta-grid">
+        <div class="meta-item">
+          <h4>Category</h4>
+          <p>Salon & Spa Management System</p>
+        </div>
+        <div class="meta-item">
+          <h4>Backend Framework</h4>
+          <p>Django (Python 3.12)</p>
+        </div>
+        <div class="meta-item">
+          <h4>Database Engine</h4>
+          <p>MS SQL Server / BEAUTYPARLOUR DB</p>
+        </div>
+        <div class="meta-item">
+          <h4>Key Features</h4>
+          <p>Online Booking, Service Catalog, Staff Roster</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-showcase">
+    <div class="container">
+      <header class="skills-header reveal">
+        <span class="section-label">UI Interface Preview</span>
+        <h2 class="section-title">System Screenshot</h2>
+      </header>
+
+      <div class="main-screenshot-container reveal">
+        <img src="../images/beauty_parlour.png" alt="Beauty Parlour Management System Interface Screenshot" />
+      </div>
+
+      <!-- Multi-Page Application Screenshot Gallery -->
+      <section class="screenshot-gallery reveal">
+        <header class="skills-header">
+          <span class="section-label">All Modules & Views</span>
+          <h2 class="section-title">System Page Gallery</h2>
+        </header>
+
+        <div class="gallery-grid reveal-stagger">
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/beauty_parlour_home.png" alt="Salon Homepage" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 01 · Client Landing</span>
+              <h3 class="page-card-title">Salon Homepage & Hero</h3>
+              <p class="page-card-desc">Welcome storefront showcasing featured hair styling, spa packages, customer testimonials, and quick booking links.</p>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/beauty_parlour_procedures.png" alt="Treatment Procedures Menu" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 02 · Service Menu</span>
+              <h3 class="page-card-title">Treatment & Service Menu</h3>
+              <p class="page-card-desc">Categorized catalog featuring hair care, facial therapies, manicures, procedure details, and pricing.</p>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/beauty_parlour_bookings.png" alt="Client Bookings" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 03 · Appointments</span>
+              <h3 class="page-card-title">My Bookings Portal</h3>
+              <p class="page-card-desc">Client appointment desk showing upcoming bookings, assigned beauticians, time slots, and status badges.</p>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/beauty_parlour_admin_login.png" alt="Admin Portal Login" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 04 · Security</span>
+              <h3 class="page-card-title">Admin Authentication Desk</h3>
+              <p class="page-card-desc">Secure portal login enforcing decorator authorization and staff role validation for salon managers.</p>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/beauty_parlour_admin_dashboard.png" alt="Admin Dashboard" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 05 · Management</span>
+              <h3 class="page-card-title">Salon Admin Console</h3>
+              <p class="page-card-desc">Central hub displaying daily appointment feeds, revenue analytics, staff availability, and quick status updates.</p>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/beauty_parlour_admin_services.png" alt="Services Administration" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Page 06 · Price Catalog</span>
+              <h3 class="page-card-title">Service & Pricing Manager</h3>
+              <p class="page-card-desc">Administrative service editor for updating procedure prices, adding new treatments, and toggling availability.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section style="margin-top: 4rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Core Features</span>
+          <h2 class="section-title">System Highlights</h2>
+        </header>
+
+        <div class="features-grid reveal-stagger">
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-calendar-check"></i> Appointment Scheduling</h3>
+            <p>Seamless online booking workflow allowing clients to select preferred procedures, dates, time slots, and aesthetic specialists.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-spa"></i> Procedure Catalog</h3>
+            <p>Categorized catalog for haircuts, luxury pedicures, manicures, facial treatments, and specialized skin therapy with pricing and durations.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-user-gear"></i> Admin & Staff Dashboard</h3>
+            <p>Comprehensive backend console for salon owners to view daily appointment queues, revenue analytics, and assign staff schedules.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-id-card"></i> Client Membership Records</h3>
+            <p>Centralized client history tracking past appointments, treatment notes, loyalty points, and custom beauty preferences.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top: 4rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Source Code</span>
+          <h2 class="section-title">GitHub Repository</h2>
+        </header>
+        <div class="feature-card reveal" style="text-align:center; padding: 2.5rem 1.5rem;">
+          <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">
+            <i class="fa-brands fa-github" style="font-size: 2rem; vertical-align: middle; margin-right: 0.5rem;"></i>
+            Explore Source Code on GitHub
+          </h3>
+          <p style="margin-bottom: 1.5rem; max-width: 600px; margin-inline: auto; color: var(--light-gray);">
+            Access the complete repository, project commits, architecture documentation, and codebase on GitHub.
+          </p>
+          <a href="https://github.com/Muhammad-1410/Beauty-Parlour-Management" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fa-brands fa-github"></i> Open GitHub Repository
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 <span>Muhammad Butt</span> — Beauty Parlour Management System</p>
+        <a href="../index.html#projects" class="btn btn-secondary btn-sm">Back to Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
