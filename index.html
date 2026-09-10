@@ -80,40 +80,43 @@
   </nav>
 
   <section class="hero" id="hero" aria-label="Hero introduction">
-    <div class="container hero-content">
-      <div class="hero-status-row">
-        <p class="hero-eyebrow">Available for hire</p>
-        <span class="response-time-pill" title="Guaranteed quick turnarounds">
-          <i class="fa-solid fa-bolt" aria-hidden="true"></i> Response Promise: &lt; 24 hrs
-        </span>
-      </div>
-      <h1 class="hero-name">Muhammad</h1>
-      <p class="hero-tagline" id="heroTagline" aria-live="polite">
-        <span class="typewriter-cursor" aria-hidden="true"></span>
-      </p>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-status-row">
+          <p class="hero-eyebrow">Available for hire</p>
+          <span class="response-time-pill" title="Guaranteed quick turnarounds">
+            <i class="fa-solid fa-bolt" aria-hidden="true"></i> Response Promise: &lt; 24 hrs
+          </span>
+        </div>
+        <h1 class="hero-name">Muhammad</h1>
+        <p class="hero-tagline" id="heroTagline" aria-live="polite">
+          <span class="typewriter-cursor" aria-hidden="true"></span>
+        </p>
 
-      <!-- CTA buttons -->
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary" aria-label="View my projects" id="ctaProjects">
-          <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
-          View Projects
-        </a>
-        <a href="#contact-section" class="btn btn-secondary" aria-label="Contact me directly" id="ctaContact">
-          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-          Contact Me
-        </a>
+        <!-- CTA buttons -->
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary" aria-label="View my projects" id="ctaProjects">
+            <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+            View Projects
+          </a>
+          <a href="#contact-section" class="btn btn-secondary" aria-label="Contact me directly" id="ctaContact">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            Contact Me
+          </a>
+        </div>
       </div>
 
-    </div>
-
-    <div class="hero-shapes" aria-hidden="true">
-      <span class="shape-star">✦</span>
-      <div class="shape-badge">
-        <img src="images/profile.jpg" alt="Muhammad Butt Profile Photo" class="hero-badge-img" />
-        <div class="hero-badge-tag">FULL STACK DEV</div>
+      <div class="hero-image-col">
+        <div class="hero-shapes">
+          <span class="shape-star">✦</span>
+          <div class="shape-badge">
+            <img src="images/profile.jpg" alt="Muhammad Butt Profile Photo" class="hero-badge-img" />
+            <div class="hero-badge-tag">FULL STACK DEV</div>
+          </div>
+          <span class="shape-chevron">❯❯</span>
+          <span class="shape-star" style="font-size:1.2rem; animation-direction: reverse;">✦</span>
+        </div>
       </div>
-      <span class="shape-chevron">❯❯</span>
-      <span class="shape-star" style="font-size:1.2rem; animation-direction: reverse;">✦</span>
     </div>
   </section>
 
@@ -242,6 +245,10 @@
         <article class="project-card" tabindex="0" aria-label="Project: E-Commerce Platform">
           <div class="project-img-wrapper">
             <img src="images/e_commerce.png" alt="E-Commerce Platform Screenshot" class="project-img" />
+            <div class="img-zoom-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+              <span>Click to Enlarge</span>
+            </div>
           </div>
           <span class="project-tag">Django · Python · MSSQL</span>
           <h3 class="project-title">E-Commerce Platform</h3>
@@ -267,6 +274,10 @@
           <div class="project-img-wrapper">
             <img src="images/beauty_parlour.png" alt="Beauty Parlour Management System Screenshot"
               class="project-img" />
+            <div class="img-zoom-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+              <span>Click to Enlarge</span>
+            </div>
           </div>
           <span class="project-tag">PYTHON 3.12 · DJANGO</span>
           <h3 class="project-title">Beauty Parlour Management System</h3>
@@ -291,6 +302,10 @@
         <article class="project-card" tabindex="0" aria-label="Project: School Management System">
           <div class="project-img-wrapper">
             <img src="images/school_management.png" alt="School Management System Screenshot" class="project-img" />
+            <div class="img-zoom-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+              <span>Click to Enlarge</span>
+            </div>
           </div>
           <span class="project-tag">Python · Django · MSSQL</span>
           <h3 class="project-title">School Management System</h3>
@@ -315,6 +330,10 @@
         <article class="project-card" tabindex="0" aria-label="Project: Employee Tracker">
           <div class="project-img-wrapper">
             <img src="images/employee_tracker.png" alt="Employee Tracker Screenshot" class="project-img" />
+            <div class="img-zoom-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+              <span>Click to Enlarge</span>
+            </div>
           </div>
           <span class="project-tag">Python · PyQt5</span>
           <h3 class="project-title">Employee Tracker</h3>
@@ -339,6 +358,10 @@
         <article class="project-card" tabindex="0" aria-label="Project: RayTracer App">
           <div class="project-img-wrapper">
             <img src="images/ray_tracer.png" alt="Real-Time RayTracer App Screenshot" class="project-img" />
+            <div class="img-zoom-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+              <span>Click to Enlarge</span>
+            </div>
           </div>
           <span class="project-tag">C++17 · OpenGL 4.5</span>
           <h3 class="project-title">RayTracer App</h3>
@@ -362,6 +385,10 @@
         <article class="project-card" tabindex="0" aria-label="Project: Library Management System">
           <div class="project-img-wrapper">
             <img src="images/library_management.png" alt="Library Management System Screenshot" class="project-img" />
+            <div class="img-zoom-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+              <span>Click to Enlarge</span>
+            </div>
           </div>
           <span class="project-tag">Python · MSSQL · Django</span>
           <h3 class="project-title">Library Management System</h3>
@@ -386,6 +413,10 @@
         <article class="project-card" tabindex="0" aria-label="Project: Calculator App">
           <div class="project-img-wrapper">
             <img src="images/calculator_django.png" alt="Calculator App Screenshot" class="project-img" />
+            <div class="img-zoom-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+              <span>Click to Enlarge</span>
+            </div>
           </div>
           <span class="project-tag">Python · Django 6.0</span>
           <h3 class="project-title">Calculator App</h3>
@@ -730,7 +761,17 @@
       </div>
 
     </div>
-  </footer>
+  <!-- ── SCREENSHOT LIGHTBOX POPUP MODAL ── -->
+  <div class="lightbox-modal" id="imageLightboxModal" aria-hidden="true" role="dialog" aria-label="Image Preview Modal">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Close image preview">&times;</button>
+      <div class="lightbox-img-container">
+        <img id="lightboxImage" src="" alt="Project Screenshot Preview" />
+      </div>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 

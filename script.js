@@ -226,8 +226,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.project-card').forEach(card => {
     card.style.cursor = 'pointer';
     card.addEventListener('click', function (e) {
-      // Don't duplicate if clicking directly on a link
+      // Don't duplicate if clicking directly on a link or screenshot wrapper
       if (e.target.closest('a')) return;
+      if (e.target.closest('.project-img-wrapper')) return; // handled by lightbox popup
 
       const link = card.querySelector('a.btn');
       if (link) {
@@ -392,5 +393,81 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
+  /* ── 13. PROJECT SCREENSHOT LIGHTBOX POPUP ─────────────── */
+  // Ensure Lightbox element exists in DOM or inject dynamically
+  let lightboxModal = document.getElementById('imageLightboxModal');
+  if (!lightboxModal) {
+    lightboxModal = document.createElement('div');
+    lightboxModal.id = 'imageLightboxModal';
+    lightboxModal.className = 'lightbox-modal';
+    lightboxModal.setAttribute('aria-hidden', 'true');
+    lightboxModal.setAttribute('role', 'dialog');
+    lightboxModal.innerHTML = `
+      <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Close image preview">&times;</button>
+        <div class="lightbox-img-container">
+          <img id="lightboxImage" src="" alt="Project Screenshot Preview" />
+        </div>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+    `;
+    document.body.appendChild(lightboxModal);
+  }
+
+  const lightboxImg = document.getElementById('lightboxImage');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+  const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+
+  function openLightbox(imgSrc, captionText) {
+    if (!lightboxImg || !lightboxModal) return;
+    lightboxImg.src = imgSrc;
+    if (lightboxCaption) {
+      lightboxCaption.textContent = captionText || 'Project Screenshot';
+      lightboxCaption.style.display = captionText ? 'block' : 'none';
+    }
+    lightboxModal.classList.add('active');
+    lightboxModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightboxModal) return;
+    lightboxModal.classList.remove('active');
+    lightboxModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+  if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+
+  // Attach click listener to project screenshots across homepage & detail pages
+  const selector = '.project-img-wrapper, .project-img, .main-screenshot-container, .page-card-img-wrapper, [data-lightbox]';
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest(selector);
+    if (trigger) {
+      e.stopPropagation();
+      e.preventDefault();
+      const img = trigger.tagName === 'IMG' ? trigger : trigger.querySelector('img');
+      if (img && img.src) {
+        let caption = img.alt || '';
+        const cardTitle = trigger.closest('.project-card, .page-card, main')?.querySelector('.project-title, .page-card-title, .project-detail-title, h3')?.textContent;
+        if (cardTitle) {
+          caption = cardTitle.trim() + (img.alt && !img.alt.toLowerCase().includes('screenshot') ? ` — ${img.alt}` : '');
+        }
+        openLightbox(img.src, caption);
+      }
+    }
+  });
+
 }); // end DOMContentLoaded
+
 
