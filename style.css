@@ -184,12 +184,21 @@ body, p, span, input, textarea, button {
               transform var(--dur-med) var(--ease-snappy);
 }
 
-.reveal-stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0ms; }
-.reveal-stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 80ms; }
-.reveal-stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 160ms; }
-.reveal-stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 240ms; }
-.reveal-stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 320ms; }
-.reveal-stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 400ms; }
+.reveal-stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 80ms; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 160ms; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 240ms; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 320ms; }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 400ms; }
+.reveal-stagger.visible > *:nth-child(7) { transition-delay: 480ms; }
+.reveal-stagger.visible > *:nth-child(8) { transition-delay: 560ms; }
+.reveal-stagger.visible > *:nth-child(9) { transition-delay: 640ms; }
+.reveal-stagger.visible > *:nth-child(10) { transition-delay: 720ms; }
 
 
 /* ═══════════════════════════════════════════════════════════
@@ -662,7 +671,7 @@ body, p, span, input, textarea, button {
    PROJECTS SECTION
 ═══════════════════════════════════════════════════════════ */
 .projects {
-  padding: var(--gap-lg) 0 1.5rem 0;
+  padding: var(--gap-md) 0 0.5rem 0;
   background: var(--black);
   position: relative;
 }
@@ -684,7 +693,7 @@ body, p, span, input, textarea, button {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 
 /* Project card */
@@ -788,7 +797,7 @@ body, p, span, input, textarea, button {
    ABOUT SECTION  — Retro ID Card
 ═══════════════════════════════════════════════════════════ */
 .about {
-  padding: 1.5rem 0 var(--gap-lg) 0;
+  padding: 0.75rem 0 var(--gap-md) 0;
   background: var(--off-black);
   position: relative;
   overflow: hidden;

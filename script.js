@@ -182,6 +182,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ── SMOOTH SCROLL FOR NAV & SECTION LINKS ───────────────── */
+  /**
+   * Custom smooth scroll helper that slows down and eases the scroll animation speed
+   * (duration = 1200ms) for a silky, controlled transition across sections.
+   */
+  function smoothScrollTo(targetPosition, duration = 1200) {
+    const startPosition = window.scrollY || window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const easeProgress = easeInOutCubic(progress);
+
+      window.scrollTo(0, startPosition + distance * easeProgress);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    }
+
+    requestAnimationFrame(animation);
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
@@ -192,18 +221,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       e.preventDefault();
 
-      if (targetId === '#socials') {
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        const navbar = document.querySelector('.navbar');
-        const navbarHeight = navbar ? navbar.offsetHeight : 70;
-        const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+      const navbar = document.querySelector('.navbar');
+      const navbarHeight = navbar ? navbar.offsetHeight : 70;
+      const targetTop = targetId === '#socials'
+        ? target.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2) + (target.offsetHeight / 2)
+        : target.getBoundingClientRect().top + window.scrollY - navbarHeight;
 
-        window.scrollTo({
-          top: targetTop,
-          behavior: 'smooth'
-        });
-      }
+      smoothScrollTo(targetTop, 1200);
     });
   });
 
@@ -213,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      smoothScrollTo(0, 1200);
     });
   }
 
