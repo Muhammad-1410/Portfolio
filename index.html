@@ -657,6 +657,7 @@
             <div class="form-group">
               <label for="contactEmail">Your Email <span class="req">*</span></label>
               <input type="email" id="contactEmail" name="email" placeholder="e.g. sarah@example.com" required />
+              <div class="email-error-msg" id="emailErrorMsg" aria-live="polite"></div>
             </div>
           </div>
           <div class="form-group">
@@ -669,6 +670,7 @@
             <textarea id="contactMessage" name="message" rows="5"
               placeholder="Tell me about your project or opportunity..." required></textarea>
           </div>
+          <div class="form-alert-banner" id="formAlertBanner" role="alert" style="display: none;"></div>
           <button type="submit" class="btn btn-primary btn-submit" id="contactSubmitBtn">
             <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message
           </button>

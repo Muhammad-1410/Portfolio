@@ -301,67 +301,224 @@ document.addEventListener('DOMContentLoaded', () => {
   sections.forEach(sec => sectionObserver.observe(sec));
 
 
-  /* ── 11. CONTACT FORM & CONFIRMATION MODAL ──────────────── */
+  /* ── 11. CONTACT FORM & EMAIL EXISTENCE VALIDATION ──────────── */
   const contactForm     = document.getElementById('contactForm');
   const contactModal    = document.getElementById('contactModal');
   const modalCloseBtn   = document.getElementById('modalCloseBtn');
   const modalOkBtn      = document.getElementById('modalOkBtn');
   const modalSenderName = document.getElementById('modalSenderName');
+  const emailInput      = document.getElementById('contactEmail');
+  const emailErrorMsg   = document.getElementById('emailErrorMsg');
+  const formAlertBanner = document.getElementById('formAlertBanner');
+
+  /**
+   * Validates if an email address actually exists and has active MX records.
+   * 1. Checks strict RFC format.
+   * 2. Detects common typos (gmai.com -> gmail.com).
+   * 3. Calls deliverability API (mailcheck.ai).
+   * 4. Fallback: Google Public DNS MX record lookup.
+   */
+  async function validateEmailExistence(email) {
+    if (!email) {
+      return { valid: false, reason: "Please enter an email address." };
+    }
+
+    // 1. Strict RFC 5322 Format Check
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+    if (!emailRegex.test(email)) {
+      return { valid: false, reason: "Invalid email format. Example: name@example.com" };
+    }
+
+    const parts = email.split('@');
+    const domain = parts[1].toLowerCase();
+
+    // Common domain typos dictionary
+    const domainTypos = {
+      'gmai.com': 'gmail.com', 'gmaill.com': 'gmail.com', 'gmil.com': 'gmail.com', 'gmial.com': 'gmail.com',
+      'yaho.com': 'yahoo.com', 'yahooo.com': 'yahoo.com', 'yahi.com': 'yahoo.com',
+      'hotmai.com': 'hotmail.com', 'hotmial.com': 'hotmail.com',
+      'outloo.com': 'outlook.com', 'outlok.com': 'outlook.com',
+      'iclou.com': 'icloud.com'
+    };
+
+    if (domainTypos[domain]) {
+      const suggestedEmail = `${parts[0]}@${domainTypos[domain]}`;
+      return {
+        valid: false,
+        reason: `Did you mean <strong style="color:var(--yellow);">${suggestedEmail}</strong>? Please check your email for typos.`
+      };
+    }
+
+    // 2. Real-time Deliverability Check via Mailcheck API
+    try {
+      const response = await fetch(`https://api.mailcheck.ai/email/${encodeURIComponent(email)}`, {
+        signal: AbortSignal.timeout(4000)
+      });
+      if (response.ok) {
+        const data = await response.json();
+        if (data.mx === false) {
+          return {
+            valid: false,
+            reason: `The domain "<strong>${domain}</strong>" does not exist or has no active mail server to receive emails.`
+          };
+        }
+        if (data.disposable) {
+          return {
+            valid: false,
+            reason: "Disposable or temporary email addresses are not accepted."
+          };
+        }
+        if (data.did_you_mean) {
+          return {
+            valid: false,
+            reason: `Did you mean <strong>${data.did_you_mean}</strong>?`
+          };
+        }
+        return { valid: true };
+      }
+    } catch (err) {
+      console.warn("Mailcheck API offline/timed out, using DNS lookup fallback:", err);
+    }
+
+    // 3. Fallback: Google Public DNS MX Record Lookup
+    try {
+      const dnsRes = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(domain)}&type=MX`, {
+        signal: AbortSignal.timeout(4000)
+      });
+      if (dnsRes.ok) {
+        const dnsData = await dnsRes.json();
+        // Status 3 = NXDOMAIN (Domain does not exist)
+        if (dnsData.Status === 3) {
+          return {
+            valid: false,
+            reason: `The domain "<strong>${domain}</strong>" does not exist.`
+          };
+        }
+        const hasMX = dnsData.Answer && dnsData.Answer.some(rec => rec.type === 15);
+        if (!hasMX && (!dnsData.Answer || dnsData.Answer.length === 0)) {
+          return {
+            valid: false,
+            reason: `The domain "<strong>${domain}</strong>" cannot receive emails (no MX mail server found).`
+          };
+        }
+      }
+    } catch (err) {
+      console.warn("Google DNS API lookup failed:", err);
+    }
+
+    // Format is valid and no negative MX signal found
+    return { valid: true };
+  }
+
+  // Clear email errors when user modifies input
+  if (emailInput) {
+    emailInput.addEventListener('input', () => {
+      emailInput.classList.remove('input-error');
+      if (emailErrorMsg) {
+        emailErrorMsg.classList.remove('active');
+        emailErrorMsg.innerHTML = '';
+      }
+      if (formAlertBanner) {
+        formAlertBanner.style.display = 'none';
+      }
+    });
+  }
 
   if (contactForm && contactModal) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const nameVal    = document.getElementById('contactName')?.value.trim() || 'Friend';
-      const emailVal   = document.getElementById('contactEmail')?.value.trim();
+      const emailVal   = emailInput?.value.trim() || '';
       const subjectVal = document.getElementById('contactSubject')?.value.trim() || 'General Inquiry';
-      const messageVal = document.getElementById('contactMessage')?.value.trim();
+      const messageVal = document.getElementById('contactMessage')?.value.trim() || '';
 
-      const submitBtn = contactForm.querySelector('.btn-submit');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending Email...';
+      const submitBtn  = contactForm.querySelector('.btn-submit');
+
+      // Clear previous error messages & alert banner
+      if (emailInput) emailInput.classList.remove('input-error');
+      if (emailErrorMsg) {
+        emailErrorMsg.classList.remove('active');
+        emailErrorMsg.innerHTML = '';
+      }
+      if (formAlertBanner) {
+        formAlertBanner.style.display = 'none';
+        formAlertBanner.className = 'form-alert-banner';
       }
 
-      // Submit directly to email inbox via FormSubmit AJAX API
-      fetch('https://formsubmit.co/ajax/write2muhammadbutt@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: nameVal,
-          email: emailVal,
-          subject: subjectVal,
-          message: messageVal,
-          _subject: `Portfolio Message: ${subjectVal}`
-        })
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (modalSenderName) {
-          modalSenderName.textContent = nameVal;
+      // Step 1: Verify Email Existence
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Verifying Email...';
+      }
+
+      const validation = await validateEmailExistence(emailVal);
+
+      if (!validation.valid) {
+        if (emailInput) emailInput.classList.add('input-error');
+        if (emailErrorMsg) {
+          emailErrorMsg.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${validation.reason}`;
+          emailErrorMsg.classList.add('active');
         }
-        contactModal.classList.add('active');
-        contactModal.setAttribute('aria-hidden', 'false');
-        contactForm.reset();
-      })
-      .catch(err => {
-        console.warn('FormSubmit AJAX fallback triggered:', err);
-        if (modalSenderName) {
-          modalSenderName.textContent = nameVal;
-        }
-        contactModal.classList.add('active');
-        contactModal.setAttribute('aria-hidden', 'false');
-        contactForm.reset();
-      })
-      .finally(() => {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message';
         }
-      });
+        return; // Stop submission if email does not exist
+      }
+
+      // Step 2: Send Email via API
+      if (submitBtn) {
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending Message...';
+      }
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/write2muhammadbutt@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: nameVal,
+            email: emailVal,
+            subject: subjectVal,
+            message: messageVal,
+            _subject: `Portfolio Message: ${subjectVal}`
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success === "true" || data.success === true) {
+          if (modalSenderName) {
+            modalSenderName.textContent = nameVal;
+          }
+          contactModal.classList.add('active');
+          contactModal.setAttribute('aria-hidden', 'false');
+          contactForm.reset();
+        } else {
+          // FormSubmit returned an issue (e.g. activation pending)
+          const errorText = data.message || 'Unable to deliver message at this time.';
+          if (formAlertBanner) {
+            formAlertBanner.className = 'form-alert-banner warning';
+            formAlertBanner.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> <strong>Form Delivery Notice:</strong> ${errorText}<br><small>If you haven't received emails yet, check <strong>write2muhammadbutt@gmail.com</strong> for the FormSubmit activation link or email directly to <a href="mailto:write2muhammadbutt@gmail.com">write2muhammadbutt@gmail.com</a>.</small>`;
+            formAlertBanner.style.display = 'block';
+          }
+        }
+      } catch (err) {
+        console.error('Contact form submission error:', err);
+        if (formAlertBanner) {
+          formAlertBanner.className = 'form-alert-banner error';
+          formAlertBanner.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> <strong>Connection Error:</strong> Could not reach email service. Please try again or email directly to <a href="mailto:write2muhammadbutt@gmail.com">write2muhammadbutt@gmail.com</a>.`;
+          formAlertBanner.style.display = 'block';
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message';
+        }
+      }
     });
 
     const closeModal = () => {
