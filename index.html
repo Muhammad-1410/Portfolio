@@ -50,7 +50,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@500;600;700;800&display=swap"
     rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -60,9 +60,29 @@
 
 <body>
 
+  <!-- ── NEO-BRUTALIST MARQUEE TICKER ── -->
+  <div class="marquee-banner" aria-hidden="true">
+    <div class="marquee-track">
+      <span>✦ FULL-STACK DEVELOPER</span>
+      <span>★ PYTHON &amp; DJANGO EXPERT</span>
+      <span>⚡ AVAILABLE FOR HIRE</span>
+      <span>✦ HIGH PERFORMANCE WEB APPS</span>
+      <span>★ FAISALABAD, PAKISTAN</span>
+      <span>✦ CREATIVE CODE</span>
+      <span>✦ FULL-STACK DEVELOPER</span>
+      <span>★ PYTHON &amp; DJANGO EXPERT</span>
+      <span>⚡ AVAILABLE FOR HIRE</span>
+      <span>✦ HIGH PERFORMANCE WEB APPS</span>
+      <span>★ FAISALABAD, PAKISTAN</span>
+      <span>✦ CREATIVE CODE</span>
+    </div>
+  </div>
+
   <nav class="navbar" aria-label="Main navigation">
     <div class="container nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Go to top">Muhammad</a>
+      <a href="#hero" class="nav-logo" aria-label="Go to top">
+        <span class="logo-sticker">M</span>UHAMMAD
+      </a>
       <ul class="nav-links" id="navLinks" role="list">
         <li><a href="#skills" aria-label="Jump to Skills section">Skills</a></li>
         <li><a href="#projects" aria-label="Jump to Projects section">Projects</a></li>
@@ -83,9 +103,9 @@
     <div class="container hero-inner">
       <div class="hero-content">
         <div class="hero-status-row">
-          <p class="hero-eyebrow">Available for hire</p>
+          <span class="neo-badge badge-hire">✦ AVAILABLE FOR HIRE</span>
           <span class="response-time-pill" title="Guaranteed quick turnarounds">
-            <i class="fa-solid fa-bolt" aria-hidden="true"></i> Response Promise: &lt; 24 hrs
+            <i class="fa-solid fa-bolt" aria-hidden="true"></i> RESPONSE: &lt; 24 HRS
           </span>
         </div>
         <h1 class="hero-name">Muhammad</h1>
@@ -97,24 +117,40 @@
         <div class="hero-cta">
           <a href="#projects" class="btn btn-primary" aria-label="View my projects" id="ctaProjects">
             <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
-            View Projects
+            VIEW PROJECTS
           </a>
           <a href="#contact-section" class="btn btn-secondary" aria-label="Contact me directly" id="ctaContact">
             <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-            Contact Me
+            LET'S TALK ⚡
           </a>
         </div>
       </div>
 
       <div class="hero-image-col">
         <div class="hero-shapes">
-          <span class="shape-star">✦</span>
-          <div class="shape-badge">
-            <img src="images/profile.jpg" alt="Muhammad Butt Profile Photo" class="hero-badge-img" />
-            <div class="hero-badge-tag">FULL STACK DEV</div>
+          <!-- Retro OS Window Container -->
+          <div class="neo-window hero-window">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="window-title">profile.exe</span>
+              <div class="window-actions"><span>_</span><span>▢</span><span>✕</span></div>
+            </div>
+            <div class="window-body">
+              <div class="profile-img-frame">
+                <img src="images/profile.jpg" alt="Muhammad Butt Profile Photo" class="hero-badge-img" />
+                <div class="hero-badge-tag">FULL-STACK DEV ⚡</div>
+              </div>
+            </div>
           </div>
-          <span class="shape-chevron">❯❯</span>
-          <span class="shape-star" style="font-size:1.2rem; animation-direction: reverse;">✦</span>
+          <div class="hero-sticker-row">
+            <span class="sticker-tag sticker-pink">PYTHON 3.12</span>
+            <span class="sticker-tag sticker-yellow">DJANGO 6.0</span>
+            <span class="sticker-tag sticker-mint">FAISALABAD 🇵🇰</span>
+          </div>
         </div>
       </div>
     </div>
@@ -127,7 +163,8 @@
         <h2 class="section-title">My Skills</h2>
       </header>
       <div class="skills-grid reveal-stagger">
-        <article class="skill-card" data-num="01" tabindex="0" aria-label="Skill: Web Development">
+        <article class="skill-card card-mint" data-num="01" tabindex="0" aria-label="Skill: Web Development">
+          <i class="fa-solid fa-code skill-icon" aria-hidden="true"></i>
           <h3 class="skill-name">Web Dev</h3>
           <p class="skill-desc">
             Building responsive, accessible, and performant
@@ -143,7 +180,8 @@
         </article>
 
         <!-- ── Skill 2: Python Development ── -->
-        <article class="skill-card" data-num="02" tabindex="0" aria-label="Skill: Python Development">
+        <article class="skill-card card-yellow" data-num="02" tabindex="0" aria-label="Skill: Python Development">
+          <i class="fa-brands fa-python skill-icon" aria-hidden="true"></i>
           <h3 class="skill-name">Python Dev</h3>
           <p class="skill-desc">
             Scripting, automation, data processing, and backend
@@ -159,7 +197,8 @@
         </article>
 
         <!-- ── Skill 3: Django ── -->
-        <article class="skill-card" data-num="03" tabindex="0" aria-label="Skill: Django">
+        <article class="skill-card card-pink" data-num="03" tabindex="0" aria-label="Skill: Django">
+          <i class="fa-solid fa-cubes skill-icon" aria-hidden="true"></i>
           <h3 class="skill-name">Django</h3>
           <p class="skill-desc">
             Crafting robust web applications with Django — REST
@@ -175,7 +214,8 @@
         </article>
 
         <!-- ── Skill 4: Graphics Designing ── -->
-        <article class="skill-card" data-num="04" tabindex="0" aria-label="Skill: Graphics Designing">
+        <article class="skill-card card-purple" data-num="04" tabindex="0" aria-label="Skill: Graphics Designing">
+          <i class="fa-solid fa-palette skill-icon" aria-hidden="true"></i>
           <h3 class="skill-name">Graphics Design</h3>
           <p class="skill-desc">
             Crafting brand identities, UI/UX mockups, digital banners, and visual design assets using Photoshop &amp;
@@ -191,7 +231,8 @@
         </article>
 
         <!-- ── Skill 5: Illustrations ── -->
-        <article class="skill-card" data-num="05" tabindex="0" aria-label="Skill: Illustrations">
+        <article class="skill-card card-cyan" data-num="05" tabindex="0" aria-label="Skill: Illustrations">
+          <i class="fa-solid fa-pen-nib skill-icon" aria-hidden="true"></i>
           <h3 class="skill-name">Illustrations</h3>
           <p class="skill-desc">
             Creating custom vector art, character designs, creative iconography, and retro visual story elements.
@@ -206,7 +247,8 @@
         </article>
 
         <!-- ── Skill 6: Video Editing ── -->
-        <article class="skill-card" data-num="06" tabindex="0" aria-label="Skill: Video Editing">
+        <article class="skill-card card-peach" data-num="06" tabindex="0" aria-label="Skill: Video Editing">
+          <i class="fa-solid fa-film skill-icon" aria-hidden="true"></i>
           <h3 class="skill-name">Video Editing</h3>
           <p class="skill-desc">
             Editing promos, motion graphics, video content, and reel trailers with seamless transitions &amp; timing.
