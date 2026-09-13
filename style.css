@@ -661,6 +661,129 @@ h2, h3 {
   box-shadow: var(--shadow-active);
 }
 
+/* ─── FIVERR & UPWORK FREELANCE BUTTONS & CONTAINERS ────── */
+.btn-fiverr {
+  background: #1DBF73;
+  color: var(--neo-white);
+}
+
+.btn-fiverr:hover {
+  background: #18a664;
+  color: var(--neo-white);
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-fiverr:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-active);
+}
+
+.btn-upwork {
+  background: #14A800;
+  color: var(--neo-white);
+}
+
+.btn-upwork:hover {
+  background: #118f00;
+  color: var(--neo-white);
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-upwork:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-active);
+}
+
+.btn-svg-icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+/* Status Row Freelance Pills */
+.freelance-pill {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 2px solid var(--neo-black);
+  box-shadow: var(--shadow-badge);
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all var(--dur-fast) var(--ease-snappy);
+}
+
+.pill-fiverr {
+  background: #1DBF73;
+  color: var(--neo-white);
+}
+
+.pill-fiverr:hover {
+  background: #18a664;
+  color: var(--neo-white);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-card);
+}
+
+.pill-upwork {
+  background: #14A800;
+  color: var(--neo-white);
+}
+
+.pill-upwork:hover {
+  background: #118f00;
+  color: var(--neo-white);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-card);
+}
+
+/* Navbar Freelance Link Badges */
+.nav-freelance-badge {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 2px solid var(--neo-black) !important;
+  border-radius: 6px;
+  box-shadow: var(--shadow-badge);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--dur-fast);
+}
+
+.fiverr-nav {
+  background: #1DBF73;
+  color: var(--neo-white) !important;
+}
+
+.fiverr-nav:hover {
+  background: #18a664 !important;
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-card);
+}
+
+.upwork-nav {
+  background: #14A800;
+  color: var(--neo-white) !important;
+}
+
+.upwork-nav:hover {
+  background: #118f00 !important;
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-card);
+}
+
 .btn-sm {
   font-size: 0.78rem;
   padding: 0.45em 1em;

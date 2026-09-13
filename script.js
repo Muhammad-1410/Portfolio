@@ -21,14 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Cycles through an array of tagline sentences, typing them
    * character-by-character into #heroTagline, then erasing.
-   *
-   * ★ REPLACE: Edit the `sentences` array below to customise
-   *            your hero tagline.
    */
   const typewriterEl = document.getElementById('heroTagline');
 
   if (typewriterEl) {
-    // ★ REPLACE: your tagline sentences here
     const sentences = [
       "Full-Stack Developer crafting bold, functional web apps.",
       "Python & Django enthusiast with an eye for design.",
@@ -166,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => toggleMenu(true));
     });
 
-    // Close menu on outside click / tap
     // Close menu on outside click
     document.addEventListener('click', (e) => {
       if (navLinks.classList.contains('open') && !navbar.contains(e.target)) {
@@ -650,5 +645,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 }); // end DOMContentLoaded
-
-
