@@ -1630,6 +1630,36 @@ details.faq-item[open] summary.faq-question i.faq-icon {
 }
 
 @media (max-width: 768px) {
+  /* Prevent reveal opacity lag on mobile */
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Compact section vertical spacing on mobile */
+  .hero {
+    min-height: auto;
+    padding: 2rem 0 1.5rem 0;
+  }
+
+  .skills,
+  .projects,
+  .about,
+  .faq,
+  .contact-section {
+    padding: 2rem 0;
+  }
+
+  .skills-header,
+  .projects-header,
+  .about-header,
+  .faq-header,
+  .contact-header {
+    margin-bottom: 1.2rem;
+  }
+
   .container {
     padding-inline: 1rem;
     max-width: 100%;
@@ -1858,5 +1888,6 @@ details.faq-item[open] summary.faq-question i.faq-icon {
     --shadow-xl: 6px 6px 0px var(--neo-black);
   }
 }
+
 
 
