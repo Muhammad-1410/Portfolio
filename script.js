@@ -644,4 +644,122 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+
+  /* ── 9. CLICK SPARK EFFECT (React Bits Component Integration) ── */
+  /**
+   * ClickSpark engine adapted for the developer portfolio.
+   * Emits spark rays matching the website's Neo-Brutalist brand colors.
+   */
+  function initClickSpark(options = {}) {
+    const {
+      // Website color palette: Hot Pink (#FF5C93), Canary Yellow (#FFD23F), Mint (#2CD8A5), Cyan (#00E5FF), Purple (#A5A6F6)
+      brandColors = ['#FF5C93', '#FFD23F', '#2CD8A5', '#00E5FF', '#A5A6F6', '#000000'],
+      sparkSize = 12,
+      sparkRadius = 18,
+      sparkCount = 8,
+      duration = 400,
+      easing = 'ease-out',
+      extraScale = 1.0
+    } = options;
+
+    let canvas = document.getElementById('click-spark-canvas');
+    if (!canvas) {
+      canvas = document.createElement('canvas');
+      canvas.id = 'click-spark-canvas';
+      document.body.appendChild(canvas);
+    }
+
+    const ctx = canvas.getContext('2d');
+    let sparks = [];
+    let animationId = null;
+    let colorIndex = 0;
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const getEase = (t) => {
+      switch (easing) {
+        case 'linear':
+          return t;
+        case 'ease-in':
+          return t * t;
+        case 'ease-in-out':
+          return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        default:
+          return t * (2 - t); // ease-out
+      }
+    };
+
+    const draw = (timestamp) => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      sparks = sparks.filter((spark) => {
+        const elapsed = timestamp - spark.startTime;
+        if (elapsed >= duration) return false;
+
+        const progress = elapsed / duration;
+        const eased = getEase(progress);
+
+        const distance = eased * sparkRadius * extraScale;
+        const lineLength = sparkSize * (1 - eased);
+
+        const x1 = spark.x + distance * Math.cos(spark.angle);
+        const y1 = spark.y + distance * Math.sin(spark.angle);
+        const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
+        const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
+
+        ctx.strokeStyle = spark.color;
+        ctx.lineWidth = 2.5;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+
+        return true;
+      });
+
+      if (sparks.length > 0) {
+        animationId = requestAnimationFrame(draw);
+      } else {
+        animationId = null;
+      }
+    };
+
+    const addSparks = (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      const now = performance.now();
+
+      // Pick next color from website brand palette
+      const selectedColor = brandColors[colorIndex % brandColors.length];
+      colorIndex++;
+
+      const newSparks = Array.from({ length: sparkCount }, (_, i) => ({
+        x,
+        y,
+        angle: (2 * Math.PI * i) / sparkCount,
+        startTime: now,
+        color: selectedColor
+      }));
+
+      sparks.push(...newSparks);
+
+      if (!animationId) {
+        animationId = requestAnimationFrame(draw);
+      }
+    };
+
+    window.addEventListener('pointerdown', addSparks, { passive: true });
+  }
+
+  // Initialize ClickSpark on DOM Ready
+  initClickSpark();
+
 }); // end DOMContentLoaded
+

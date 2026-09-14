@@ -2059,3 +2059,16 @@ details.faq-item[open] summary.faq-question i.faq-icon {
     box-sizing: border-box;
   }
 }
+
+/* ─── CLICK SPARK CANVAS OVERLAY ──────────────────────────── */
+#click-spark-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999999;
+  display: block;
+}
+
