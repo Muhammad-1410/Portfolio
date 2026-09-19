@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>binvid — Binary ASCII Video Processing Engine | Muhammad Butt Portfolio</title>
+  <meta name="description"
+    content="High-performance Python video processing engine and Gradio 6 web app transforming standard video footage into dynamic binary ASCII art with OpenCV, NumPy SIMD, and FFmpeg streaming." />
+  <meta name="keywords"
+    content="Binary Video, ASCII Art, OpenCV, Python Video Processing, NumPy SIMD, FFmpeg, Gradio 6, Computer Vision, Real-Time Video Art" />
+  <link rel="canonical" href="https://muhammad-1410.github.io/projects/binary-video.html" />
+
+  <link rel="icon" type="image/jpg" href="../images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Go to homepage">
+        <span class="logo-sticker">M</span>UHAMMAD
+      </a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="../index.html#projects">← All Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#faq">FAQ</a></li>
+        <li><a href="../index.html#contact-section">Contact</a></li>
+        <li>
+          <a href="https://www.fiverr.com/muhammadbutt952?public_mode=true" target="_blank" rel="noopener noreferrer"
+            class="nav-freelance-badge fiverr-nav" aria-label="Fiverr profile">
+            <svg class="btn-svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M23.004 15.588a.995.995 0 1 0 .002-1.99.995.995 0 0 0-.002 1.99zm-.996-3.705h-.85c-.546 0-.84.41-.84 1.092v2.466h-1.61v-3.558h-.684c-.547 0-.84.41-.84 1.092v2.466h-1.61v-4.874h1.61v.74c.264-.574.626-.74 1.163-.74h1.972v.74c.264-.574.625-.74 1.162-.74h.527v1.316zm-6.786 1.501h-3.359c.088.546.43.858 1.006.858.43 0 .732-.175.83-.487l1.425.4c-.351.848-1.22 1.364-2.255 1.364-1.748 0-2.549-1.355-2.549-2.515 0-1.14.703-2.505 2.45-2.505 1.856 0 2.471 1.384 2.471 2.408 0 .224-.01.37-.02.477zm-1.562-.945c-.04-.42-.342-.81-.889-.81-.508 0-.81.225-.908.81h1.797zM7.508 15.44h1.416l1.767-4.874h-1.62l-.86 2.837-.878-2.837H5.72l1.787 4.874zm-6.6 0H2.51v-3.558h1.524v3.558h1.591v-4.874H2.51v-.302c0-.332.235-.536.606-.536h.918V8.412H2.85c-1.162 0-1.943.712-1.943 1.755v.4H0v1.316h.908v3.558z" />
+            </svg>
+            FIVERR
+          </a>
+        </li>
+        <li>
+          <a href="https://www.upwork.com/freelancers/muhammadb832?mp_source=share" target="_blank" rel="noopener noreferrer"
+            class="nav-freelance-badge upwork-nav" aria-label="Upwork profile">
+            <svg class="btn-svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" />
+            </svg>
+            UPWORK
+          </a>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="project-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="../index.html#projects">Projects</a>
+        <span>/</span>
+        <span style="color:var(--white);">binvid — Binary Video Engine</span>
+      </nav>
+
+      <span class="project-tag">PYTHON 3.10+ · OPENCV · NUMPY SIMD · FFMPEG · GRADIO 6</span>
+      <h1 class="project-detail-title">binvid — Binary ASCII Video Processing Engine</h1>
+      <p class="project-detail-tagline">
+        A high-performance Python video processing engine and interactive Gradio 6 web application that transforms standard video footage into dynamic binary ASCII art (0s and 1s) matching scene colors and luminance at real-time speeds (>30 FPS at 1080p).
+      </p>
+
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+        <a href="https://github.com/Muhammad-1410/Bin-vid/" target="_blank" rel="noopener noreferrer"
+          class="btn btn-primary">
+          <i class="fa-brands fa-github" aria-hidden="true"></i> View GitHub Repository
+        </a>
+        <a href="../index.html#projects" class="btn btn-secondary">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Projects
+        </a>
+      </div>
+
+      <div class="project-meta-grid">
+        <div class="meta-item">
+          <h4>Category</h4>
+          <p>Computer Vision &amp; Video Engine</p>
+        </div>
+        <div class="meta-item">
+          <h4>Core Tech Stack</h4>
+          <p>Python 3.10+, OpenCV, NumPy SIMD, FFmpeg</p>
+        </div>
+        <div class="meta-item">
+          <h4>Interactive UI</h4>
+          <p>Gradio 6 Glassmorphic Web App</p>
+        </div>
+        <div class="meta-item">
+          <h4>Performance</h4>
+          <p>&gt;30 FPS at 1080p (Sub-15ms Live Preview)</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-showcase">
+    <div class="container">
+
+      <!-- Main Interface Preview -->
+      <header class="skills-header reveal">
+        <span class="section-label">Engine Interface Preview</span>
+        <h2 class="section-title">Split-Screen Video Processing</h2>
+      </header>
+
+      <div class="main-screenshot-container reveal">
+        <img src="../images/binvid.png" alt="binvid Binary ASCII Video Engine Interface Screenshot" />
+        <div class="img-zoom-overlay">
+          <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+          <span>Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Worked Examples Gallery -->
+      <section class="screenshot-gallery reveal" style="margin-top: 4.5rem;">
+        <header class="skills-header">
+          <span class="section-label">Visual Styles &amp; Stills</span>
+          <h2 class="section-title">Worked Aesthetic Transformations</h2>
+          <p style="color:var(--text-muted); font-size:1.05rem; margin-top:0.5rem; max-width:750px;">
+            Side-by-side comparison stills demonstrating distinct rendering modes. The left pane shows source footage, and the right pane shows the real-time rendered binary art.
+          </p>
+        </header>
+
+        <div class="gallery-grid reveal-stagger">
+
+          <!-- Style 1: Matrix Terminal Rain -->
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/binvid_matrix.png" alt="Matrix Terminal Rain Transformation" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Style 01 · Monochrome</span>
+              <h3 class="page-card-title">Matrix Terminal Rain</h3>
+              <p class="page-card-desc">Classic green phosphor CRT terminal with vertical drifting binary rain streams, CRT scanlines, and contrast boost.</p>
+              <div style="margin-top:0.75rem; background:#07120a; border:1px solid #14401e; border-radius:6px; padding:0.5rem 0.75rem; font-family:var(--font-mono); font-size:0.75rem; color:#00e676; word-break:break-all;">
+                binvid input.mp4 --mode mono --digit-mode scroll --scanlines --contrast-boost
+              </div>
+            </div>
+          </article>
+
+          <!-- Style 2: Inverted Cyberpunk Neon -->
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/binvid_cyberpunk.png" alt="Inverted Cyberpunk Neon Transformation" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Style 02 · Full Color</span>
+              <h3 class="page-card-title">Inverted Cyberpunk Neon</h3>
+              <p class="page-card-desc">Vibrant inverted color palette with Sobel edge detection emphasis and CRT scanline rasterization for a dystopian cyber look.</p>
+              <div style="margin-top:0.75rem; background:#120719; border:1px solid #4a1458; border-radius:6px; padding:0.5rem 0.75rem; font-family:var(--font-mono); font-size:0.75rem; color:#ff4081; word-break:break-all;">
+                binvid input.mp4 --mode color --invert --edge-emphasis --scanlines
+              </div>
+            </div>
+          </article>
+
+          <!-- Style 3: Deep Midnight Terminal -->
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/binvid_midnight.png" alt="Deep Midnight Terminal Transformation" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Style 03 · Custom Tint</span>
+              <h3 class="page-card-title">Deep Midnight Terminal</h3>
+              <p class="page-card-desc">Subdued slate-cyan monochrome terminal with custom hex background tinting (<code>#0f172a</code>) and non-linear 0.7 gamma compression.</p>
+              <div style="margin-top:0.75rem; background:#07101e; border:1px solid #143558; border-radius:6px; padding:0.5rem 0.75rem; font-family:var(--font-mono); font-size:0.75rem; color:#00f2fe; word-break:break-all;">
+                binvid input.mp4 --mode mono --bg "#0f172a" --gamma 0.7
+              </div>
+            </div>
+          </article>
+
+          <!-- Style 4: High-Contrast Surveillance -->
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/binvid_surveillance.png" alt="High-Contrast Surveillance Transformation" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Style 04 · Binary Flat</span>
+              <h3 class="page-card-title">High-Contrast Surveillance</h3>
+              <p class="page-card-desc">Pure binary threshold silhouette mode with Sobel edge detection, tuned for high-contrast security feeds and surveillance camera aesthetics.</p>
+              <div style="margin-top:0.75rem; background:#141414; border:1px solid #333333; border-radius:6px; padding:0.5rem 0.75rem; font-family:var(--font-mono); font-size:0.75rem; color:#ffffff; word-break:break-all;">
+                binvid input.mp4 --mode flat --edge-emphasis --invert --threshold 100
+              </div>
+            </div>
+          </article>
+
+          <!-- Style 5: Vibrant Retro Pop Art -->
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/binvid_retro_anime.png" alt="Vibrant Retro Pop Art Transformation" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Style 05 · High-Density Color</span>
+              <h3 class="page-card-title">Vibrant Retro Pop Art</h3>
+              <p class="page-card-desc">High-density 180-column full-color rendering with gamma adjustment, contrast amplification, and fine-pitch horizontal scanlines.</p>
+              <div style="margin-top:0.75rem; background:#191207; border:1px solid #583d14; border-radius:6px; padding:0.5rem 0.75rem; font-family:var(--font-mono); font-size:0.75rem; color:#ffc700; word-break:break-all;">
+                binvid input.mp4 --mode color --gamma 0.6 --contrast-boost --scanlines --cols 180
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Key Capabilities Grid -->
+      <section style="margin-top: 4.5rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Core Engineering</span>
+          <h2 class="section-title">Technical Architecture &amp; Capabilities</h2>
+        </header>
+
+        <div class="features-grid reveal-stagger">
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-bolt"></i> Vectorized NumPy Compositing</h3>
+            <p>Renders frames in ~11ms through vectorized glyph array slicing (<code>atlas[digits]</code>) and pre-allocated in-place memory buffer arithmetic, bypassing costly CPU draw calls.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-shapes"></i> Aspect-Ratio Geometry Correction</h3>
+            <p>Calculates cell grids compensating for non-square font dimensions ($\text{rows} = \text{round}(\text{cols} \times \frac{H}{W} \times \frac{cell\_w}{cell\_h})$) to ensure distortion-free 16:9 output.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-font"></i> Pre-Rendered Glyph Atlas</h3>
+            <p>Rasterizes TrueType glyphs '0' and '1' once at boot into an optimized <code>(2, cell_h, cell_w)</code> NumPy uint8 tensor, enabling instantaneous O(1) character lookups.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-film"></i> Streaming FFmpeg Pipe Sink</h3>
+            <p>Pipes raw uncompressed BGR frames directly into an FFmpeg subprocess stdin stream with libx264 encoding and automatic source audio track remuxing.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-gauge-high"></i> Sub-15ms Live Web Preview</h3>
+            <p>Gradio 6 glassmorphic interface extracts and caches keyframes in RAM; parameter adjustments re-render live in memory in under 15ms without touching disk.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-box-archive"></i> Standalone Windows EXE &amp; CLI</h3>
+            <p>Compiled via PyInstaller into a standalone zero-dependency executable (<code>binvid.exe</code>) alongside an intuitive command-line interface with rich progress meters.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quickstart Code Section -->
+      <section style="margin-top: 4.5rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Terminal Quickstart</span>
+          <h2 class="section-title">Installation &amp; Execution</h2>
+        </header>
+        <div class="feature-card reveal" style="padding: 2rem;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color:var(--neo-yellow);">
+            <i class="fa-solid fa-terminal" style="margin-right:0.5rem;"></i> Running binvid Locally
+          </h3>
+          <pre style="background:#070a0f; border:2px solid var(--border-color); border-radius:8px; padding:1.2rem; overflow-x:auto; font-family:var(--font-mono); font-size:0.88rem; color:#e6edf3; line-height:1.6;"><code># 1. Clone the repository
+git clone https://github.com/Muhammad-1410/Bin-vid.git
+cd Bin-vid
+
+# 2. Setup virtual environment &amp; install dependencies
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+pip install -e .
+
+# 3. Launch interactive Gradio 6 Web App
+python run_app.py --inbrowser
+
+# 4. Or convert directly via Command Line
+binvid input.mp4 -o output.mp4 --mode mono --digit-mode scroll --scanlines</code></pre>
+        </div>
+      </section>
+
+      <!-- GitHub Repository Link Box -->
+      <section style="margin-top: 4rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Source Code</span>
+          <h2 class="section-title">GitHub Repository</h2>
+        </header>
+        <div class="feature-card reveal" style="text-align:center; padding: 2.5rem 1.5rem;">
+          <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">
+            <i class="fa-brands fa-github" style="font-size: 2.2rem; vertical-align: middle; margin-right: 0.5rem;"></i>
+            Muhammad-1410 / Bin-vid
+          </h3>
+          <p style="margin-bottom: 1.5rem; max-width: 600px; margin-inline: auto; color: var(--light-gray);">
+            Explore the complete Python codebase, pipeline architecture, PyInstaller build scripts, test suites, and documentation on GitHub.
+          </p>
+          <a href="https://github.com/Muhammad-1410/Bin-vid/" target="_blank" rel="noopener noreferrer"
+            class="btn btn-primary">
+            <i class="fa-brands fa-github" aria-hidden="true"></i> Open GitHub Repository
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 <span>Muhammad Butt</span> — binvid Binary ASCII Video Engine</p>
+        <a href="../index.html#projects" class="btn btn-secondary btn-sm">Back to Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

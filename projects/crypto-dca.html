@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Technical Analysis &amp; DCA Tracker — Muhammad Butt Portfolio</title>
+  <meta name="description" content="Glassmorphic cryptocurrency dashboard for 15-minute Fair Value Gap (FVG) technical analysis and automated Dollar-Cost Averaging (DCA) strategy calculation." />
+  <meta name="keywords" content="Cryptocurrency Technical Analysis, Fair Value Gap, FVG 15m, Dollar Cost Averaging, Django Crypto App, Glassmorphism UI, Chart.js" />
+  <link rel="canonical" href="https://muhammad-1410.github.io/projects/crypto-dca.html" />
+
+  <link rel="icon" type="image/jpg" href="../images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo">Muhammad</a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="../index.html#projects">← All Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#socials">Contact</a></li>
+        <li>
+          <a href="https://www.fiverr.com/muhammadbutt952?public_mode=true" target="_blank" rel="noopener noreferrer"
+            class="nav-freelance-badge fiverr-nav" aria-label="Fiverr profile">
+            <svg class="btn-svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.004 15.588a.995.995 0 1 0 .002-1.99.995.995 0 0 0-.002 1.99zm-.996-3.705h-.85c-.546 0-.84.41-.84 1.092v2.466h-1.61v-3.558h-.684c-.547 0-.84.41-.84 1.092v2.466h-1.61v-4.874h1.61v.74c.264-.574.626-.74 1.163-.74h1.972v.74c.264-.574.625-.74 1.162-.74h.527v1.316zm-6.786 1.501h-3.359c.088.546.43.858 1.006.858.43 0 .732-.175.83-.487l1.425.4c-.351.848-1.22 1.364-2.255 1.364-1.748 0-2.549-1.355-2.549-2.515 0-1.14.703-2.505 2.45-2.505 1.856 0 2.471 1.384 2.471 2.408 0 .224-.01.37-.02.477zm-1.562-.945c-.04-.42-.342-.81-.889-.81-.508 0-.81.225-.908.81h1.797zM7.508 15.44h1.416l1.767-4.874h-1.62l-.86 2.837-.878-2.837H5.72l1.787 4.874zm-6.6 0H2.51v-3.558h1.524v3.558h1.591v-4.874H2.51v-.302c0-.332.235-.536.606-.536h.918V8.412H2.85c-1.162 0-1.943.712-1.943 1.755v.4H0v1.316h.908v3.558z"/>
+            </svg>
+            FIVERR
+          </a>
+        </li>
+        <li>
+          <a href="https://www.upwork.com/freelancers/muhammadb832?mp_source=share" target="_blank" rel="noopener noreferrer"
+            class="nav-freelance-badge upwork-nav" aria-label="Upwork profile">
+            <svg class="btn-svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
+            </svg>
+            UPWORK
+          </a>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="project-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="../index.html#projects">Projects</a>
+        <span>/</span>
+        <span style="color:var(--white);">Crypto TA &amp; DCA Tracker</span>
+      </nav>
+
+      <span class="project-tag">PYTHON · DJANGO · CHART.JS · GLASSMORPHISM</span>
+      <h1 class="project-detail-title">Crypto Technical Analysis &amp; DCA Tracker</h1>
+      <p class="project-detail-tagline">
+        A financial analytics dashboard that detects 15-minute Fair Value Gap (FVG) institutional market imbalances and simulates automated Dollar-Cost Averaging (DCA) strategies inside a glassmorphic UI.
+      </p>
+
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="https://github.com/Muhammad-1410" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fab font-icon fa-github"></i> View Source Code
+        </a>
+        <a href="../index.html#projects" class="btn btn-secondary">
+          ← Back to Portfolio
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container project-detail-body">
+    
+    <section class="detail-section">
+      <h2 class="detail-heading">⚡ Project Overview &amp; Key Features</h2>
+      <p>
+        The <strong>Cryptocurrency Technical Analysis &amp; DCA Tracker</strong> combines advanced technical market structure analysis with automated dollar-cost averaging backtesting logic. Built with a Python &amp; Django backend and styled using pure CSS Glassmorphism, it provides traders and investors with clear visualization of market liquidity imbalances and accumulation performance.
+      </p>
+
+      <div class="tech-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+        <div class="tech-card" style="background:var(--bg-card); border:2px solid var(--border-color); padding:1.5rem; border-radius:12px; box-shadow:4px 4px 0 var(--shadow-color);">
+          <h3 style="color:var(--yellow); font-family:var(--font-heading); margin-bottom:0.5rem;">📈 Fair Value Gap (FVG) Engine</h3>
+          <p style="font-size:0.95rem; color:var(--text-muted);">
+            Analyzes 15m OHLCV price action to detect 3-candle institutional demand and supply imbalances. Calculates mitigation fill percentages in real time.
+          </p>
+        </div>
+
+        <div class="tech-card" style="background:var(--bg-card); border:2px solid var(--border-color); padding:1.5rem; border-radius:12px; box-shadow:4px 4px 0 var(--shadow-color);">
+          <h3 style="color:var(--accent-pink); font-family:var(--font-heading); margin-bottom:0.5rem;">💰 Automated DCA Calculator</h3>
+          <p style="font-size:0.95rem; color:var(--text-muted);">
+            Simulates recurring asset accumulation across BTC, SOL, and ETH. Computes average cost, total invested capital, current portfolio value, and net ROI %.
+          </p>
+        </div>
+
+        <div class="tech-card" style="background:var(--bg-card); border:2px solid var(--border-color); padding:1.5rem; border-radius:12px; box-shadow:4px 4px 0 var(--shadow-color);">
+          <h3 style="color:var(--green); font-family:var(--font-heading); margin-bottom:0.5rem;">🔮 Glassmorphic UI / UX</h3>
+          <p style="font-size:0.95rem; color:var(--text-muted);">
+            Translucent frosted-glass cards over a deep navy-purple gradient backdrop, hardware-accelerated <code>backdrop-filter: blur(14px)</code>, and high-contrast text.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section" style="margin-top: 2.5rem;">
+      <h2 class="detail-heading">📊 Mathematical &amp; Algorithmic Foundation</h2>
+      
+      <div style="background:var(--bg-card); border:3px solid var(--border-color); padding:1.5rem; border-radius:12px; box-shadow:6px 6px 0 var(--shadow-color); margin-bottom: 1.5rem;">
+        <h3 style="color:var(--white); font-family:var(--font-heading); font-size:1.2rem; margin-bottom:0.75rem;">1. Bullish Fair Value Gap Condition</h3>
+        <p style="font-family:var(--font-mono); background:#0b0e14; color:#00f2fe; padding:0.75rem 1rem; border-radius:8px; font-size:0.9rem;">
+          High(Candle 1) < Low(Candle 3)  ⇒  Bullish Imbalance Range = [ High(Candle 1), Low(Candle 3) ]
+        </p>
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-top:0.5rem;">
+          When buying pressure is extremely aggressive, price skips matching bids. Price often retraces back into this shaded zone to "fill" or "mitigate" the imbalance before continuing upward.
+        </p>
+      </div>
+
+      <div style="background:var(--bg-card); border:3px solid var(--border-color); padding:1.5rem; border-radius:12px; box-shadow:6px 6px 0 var(--shadow-color);">
+        <h3 style="color:var(--white); font-family:var(--font-heading); font-size:1.2rem; margin-bottom:0.75rem;">2. Strategy ROI Formula</h3>
+        <p style="font-family:var(--font-mono); background:#0b0e14; color:#00e676; padding:0.75rem 1rem; border-radius:8px; font-size:0.9rem;">
+          ROI (%) = [ (Current Portfolio Value - Total Capital Invested) / Total Capital Invested ] × 100
+        </p>
+      </div>
+    </section>
+
+    <section class="detail-section" style="margin-top: 2.5rem;">
+      <h2 class="detail-heading">🛠️ Tech Stack &amp; Architecture</h2>
+      <ul style="list-style:none; display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; padding:0;">
+        <li style="background:var(--bg-card); border:2px solid var(--border-color); padding:1rem; border-radius:8px; font-weight:700;">
+          🐍 Python &amp; Django 5
+        </li>
+        <li style="background:var(--bg-card); border:2px solid var(--border-color); padding:1rem; border-radius:8px; font-weight:700;">
+          📊 Chart.js + Canvas Plugins
+        </li>
+        <li style="background:var(--bg-card); border:2px solid var(--border-color); padding:1rem; border-radius:8px; font-weight:700;">
+          🔮 Pure CSS Glassmorphism
+        </li>
+        <li style="background:var(--bg-card); border:2px solid var(--border-color); padding:1rem; border-radius:8px; font-weight:700;">
+          ⚡ RESTful JSON API
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© <span id="currentYear">2026</span> Muhammad Butt. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
