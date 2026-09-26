@@ -109,14 +109,16 @@ All HTML pages include complete meta header tags for maximum search visibility a
 - **Responsive Layout:** CSS Grid and Flexbox rules tuned for seamless viewports across mobile (320px+), tablet, laptop, and ultra-wide desktop monitors.
 
 ### 7. Modular Multi-Page Routing & Project Showcase
-The portfolio features a main landing hub and 7 dedicated case-study pages inside the [`projects/`](file:///d:/Portfolio/projects) directory:
-1. `e-commerce.html` — Full-featured E-Commerce Web Application.
-2. `beauty-parlour.html` — Salon & Beauty Booking System.
-3. `school-management.html` — School ERP & Student Record System.
-4. `employee-tracker.html` — Corporate Employee & Payroll Management.
-5. `ray-tracer.html` — Computer Graphics Ray Tracer.
-6. `library-management.html` — Digital Library System.
-7. `calculator-django.html` — Web-based Financial / Math Calculator powered by Django.
+The portfolio features a main landing hub and 9 dedicated case-study pages inside the [`projects/`](file:///d:/Portfolio/projects) directory:
+1. `clipper.html` — Clipper: Autonomous AI Video Clip & Shorts Generator (Whisper, FFmpeg, Django, Replay Heatmaps).
+2. `binary-video.html` — binvid: High-Performance Binary ASCII Video Processing Engine (OpenCV & SIMD).
+3. `e-commerce.html` — Full-featured E-Commerce Web Application.
+4. `beauty-parlour.html` — Salon & Beauty Booking System.
+5. `school-management.html` — School ERP & Student Record System.
+6. `employee-tracker.html` — Corporate Employee & Payroll Management.
+7. `ray-tracer.html` — Computer Graphics Ray Tracer.
+8. `library-management.html` — Digital Library System.
+9. `calculator-django.html` — Web-based Financial / Math Calculator powered by Django.
 
 ### 8. Accessibility (a11y) & Performance Optimization
 - **Semantic HTML5:** Uses `<head>`, `<body>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<header>`, `<footer>`.
@@ -142,6 +144,7 @@ d:\Portfolio\
 │   └── ClickSpark.jsx           # Canvas particle spark effect component
 │
 ├── projects/                    # Detailed individual project case studies
+│   ├── clipper.html             # Flagship: Clipper — Autonomous AI Video Clip & Shorts Generator
 │   ├── binary-video.html        # Flagship: binvid — Binary ASCII Video Engine (OpenCV & SIMD)
 │   ├── beauty-parlour.html
 │   ├── calculator-django.html

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clipper — AI Video Clip &amp; Viral Shorts Generator | Muhammad Butt Portfolio</title>
+  <meta name="description"
+    content="High-performance AI video processing engine and Django web studio that automatically extracts viral moments, crops for Shorts/Reels/TikTok, and burns kinetic word-pop captions using Whisper and FFmpeg." />
+  <meta name="keywords"
+    content="Clipper, AI Video Generator, Video Clipping, OpenAI Whisper, FFmpeg, Django, Python Video Processing, Kinetic Subtitles, YouTube Replay Heatmap, Shorts, Reels, TikTok" />
+  <link rel="canonical" href="https://muhammad-1410.github.io/projects/clipper.html" />
+
+  <link rel="icon" type="image/jpg" href="../images/favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Go to homepage">
+        <span class="logo-sticker">M</span>UHAMMAD
+      </a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="../index.html#projects">← All Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#faq">FAQ</a></li>
+        <li><a href="../index.html#contact-section">Contact</a></li>
+        <li>
+          <a href="https://www.fiverr.com/muhammadbutt952?public_mode=true" target="_blank" rel="noopener noreferrer"
+            class="nav-freelance-badge fiverr-nav" aria-label="Fiverr profile">
+            <svg class="btn-svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M23.004 15.588a.995.995 0 1 0 .002-1.99.995.995 0 0 0-.002 1.99zm-.996-3.705h-.85c-.546 0-.84.41-.84 1.092v2.466h-1.61v-3.558h-.684c-.547 0-.84.41-.84 1.092v2.466h-1.61v-4.874h1.61v.74c.264-.574.626-.74 1.163-.74h1.972v.74c.264-.574.625-.74 1.162-.74h.527v1.316zm-6.786 1.501h-3.359c.088.546.43.858 1.006.858.43 0 .732-.175.83-.487l1.425.4c-.351.848-1.22 1.364-2.255 1.364-1.748 0-2.549-1.355-2.549-2.515 0-1.14.703-2.505 2.45-2.505 1.856 0 2.471 1.384 2.471 2.408 0 .224-.01.37-.02.477zm-1.562-.945c-.04-.42-.342-.81-.889-.81-.508 0-.81.225-.908.81h1.797zM7.508 15.44h1.416l1.767-4.874h-1.62l-.86 2.837-.878-2.837H5.72l1.787 4.874zm-6.6 0H2.51v-3.558h1.524v3.558h1.591v-4.874H2.51v-.302c0-.332.235-.536.606-.536h.918V8.412H2.85c-1.162 0-1.943.712-1.943 1.755v.4H0v1.316h.908v3.558z" />
+            </svg>
+            FIVERR
+          </a>
+        </li>
+        <li>
+          <a href="https://www.upwork.com/freelancers/muhammadb832?mp_source=share" target="_blank" rel="noopener noreferrer"
+            class="nav-freelance-badge upwork-nav" aria-label="Upwork profile">
+            <svg class="btn-svg-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" />
+            </svg>
+            UPWORK
+          </a>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="project-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span>/</span>
+        <a href="../index.html#projects">Projects</a>
+        <span>/</span>
+        <span style="color:var(--white);">Clipper — AI Video Generator</span>
+      </nav>
+
+      <span class="project-tag">PYTHON 3.12 · DJANGO 6.1 · WHISPER · FFMPEG · REST API</span>
+      <h1 class="project-detail-title">Clipper — AI Video Clip &amp; Viral Shorts Generator</h1>
+      <p class="project-detail-tagline">
+        An autonomous, full-stack video clipping engine and Neo-Brutalist studio editor. Ingests video streams, extracts speech with local Whisper AI timestamping, detects viral moments using YouTube audience replay heatmaps, crops to 9:16 vertical formats, and burns energetic word-by-word kinetic captions with FFmpeg.
+      </p>
+
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+        <a href="https://github.com/Muhammad-1410/Clipper" target="_blank" rel="noopener noreferrer"
+          class="btn btn-primary">
+          <i class="fa-brands fa-github" aria-hidden="true"></i> View GitHub Repository
+        </a>
+        <a href="../index.html#projects" class="btn btn-secondary">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Projects
+        </a>
+      </div>
+
+      <div class="project-meta-grid">
+        <div class="meta-item">
+          <h4>Category</h4>
+          <p>AI Video Engine &amp; Social Repurposing</p>
+        </div>
+        <div class="meta-item">
+          <h4>Backend Framework</h4>
+          <p>Django 6.1 + Django REST Framework</p>
+        </div>
+        <div class="meta-item">
+          <h4>Video &amp; Audio Core</h4>
+          <p>FFmpeg, OpenAI Whisper, yt-dlp</p>
+        </div>
+        <div class="meta-item">
+          <h4>Test Coverage</h4>
+          <p>92 Automated Tests (100% Passing)</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-showcase">
+    <div class="container">
+
+      <!-- Main Interface Preview -->
+      <header class="skills-header reveal">
+        <span class="section-label">Engine Interface Preview</span>
+        <h2 class="section-title">Automated AI Clipping &amp; Caption Studio</h2>
+      </header>
+
+      <div class="main-screenshot-container reveal">
+        <img src="../images/clipper.png" alt="Clipper AI Video Clip Generator Interface Preview" />
+        <div class="img-zoom-overlay">
+          <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+          <span>Click to Enlarge</span>
+        </div>
+      </div>
+
+      <!-- Worked Examples Gallery -->
+      <section class="screenshot-gallery reveal" style="margin-top: 4.5rem;">
+        <header class="skills-header">
+          <span class="section-label">Interactive Modules &amp; Views</span>
+          <h2 class="section-title">System Architecture &amp; Screenshots</h2>
+          <p style="color:var(--text-muted); font-size:1.05rem; margin-top:0.5rem; max-width:750px;">
+            A complete walkthrough of the Clipper workflow — from instant stream ingestion and YouTube replay curve mining to interactive timeline trimming and burned subtitle rendering.
+          </p>
+        </header>
+
+        <div class="gallery-grid reveal-stagger">
+
+          <!-- View 1: Video Ingestion & Stream Analyzer -->
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/clipper_home.png" alt="Clipper Stream Ingestion and URL Validator Interface" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Phase 01 · Stream Ingestion</span>
+              <h3 class="page-card-title">Stream Ingestion &amp; URL Analyzer</h3>
+              <p class="page-card-desc">Neo-Brutalist URL intake and validation terminal. Extracts stream metadata, thumbnail graphics, duration, and channel information before kicking off non-blocking background ingestion.</p>
+            </div>
+          </article>
+
+          <!-- View 2: AI Winning Clip & Heatmap -->
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/clipper_results_highlights.png" alt="Clipper AI Winning Clip and Engagement Heatmap" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Phase 04 &amp; 08 · Viral Intelligence</span>
+              <h3 class="page-card-title">Winning Clip &amp; Replay Heatmap</h3>
+              <p class="page-card-desc">Automatically identifies peak viewer retention moments from YouTube replay curves (up to 100% replay intensity), computes virality scores, and produces ready-to-publish 9:16 vertical clips.</p>
+            </div>
+          </article>
+
+          <!-- View 3: Studio Clip Editor -->
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/clipper_editor_zoo.png" alt="Clipper Interactive Studio Editor and Timeline Scrubber" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Phase 09 · Studio Editor</span>
+              <h3 class="page-card-title">Timeline Scrubber &amp; Subtitle Studio</h3>
+              <p class="page-card-desc">Unified production studio featuring dual-handle timeline trimmer, instant aspect ratio switcher (16:9, 9:16, 1:1), live kinetic word-by-word subtitle simulation, and color swatches.</p>
+            </div>
+          </article>
+
+          <!-- View 4: Long-Form Multi-Format Clipper -->
+          <article class="page-card">
+            <div class="page-card-img-wrapper">
+              <img src="../images/clipper_results_mrbeast.png" alt="Clipper Long-Form Transcript Search and Batch Generation" />
+            </div>
+            <div class="page-card-body">
+              <span class="page-card-tag">Phase 05-07 · Pipeline</span>
+              <h3 class="page-card-title">Transcript Search &amp; Format Converter</h3>
+              <p class="page-card-desc">Processes high-volume long-form content (20+ min videos) with sub-second keyword transcript search, timecode padding (15s/30s/60s/custom), and multi-preset subtitle burning.</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Key Capabilities Grid -->
+      <section style="margin-top: 4.5rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Core Engineering</span>
+          <h2 class="section-title">Technical Architecture &amp; Capabilities</h2>
+        </header>
+
+        <div class="features-grid reveal-stagger">
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-microphone-lines"></i> Local Whisper Speech-to-Text</h3>
+            <p>Runs OpenAI Whisper locally for speech recognition, generating millisecond-precise timestamped word and segment arrays that serve as the backbone for transcript search and caption syncing.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-crop-simple"></i> Dynamic Aspect-Ratio Cropping</h3>
+            <p>Utilizes FFmpeg hardware-accelerated filtergraphs to transform horizontal 16:9 video into 9:16 vertical (Shorts, Reels, TikTok) and 1:1 square formats with zero letterboxing distortion.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-closed-captioning"></i> Kinetic Word-Pop Subtitles</h3>
+            <p>Generates styled Advanced SubStation Alpha (ASS) and SRT caption tracks. Features animated 1-word-at-a-time pop highlights, customizable neon swatches, and punchy display typography.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-fire-flame-curved"></i> Audience Replay Heatmap Mining</h3>
+            <p>Pulls YouTube's viewer re-watch graph and analyzes peaks to detect the most engaging moments automatically, pairing heatmap data with speech hooks for viral clip selection.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-gears"></i> Non-Blocking Job Tracker</h3>
+            <p>Executes heavy FFmpeg video rendering and Whisper transcription in decoupled background worker threads, allowing the frontend to poll job progress cleanly via REST APIs.</p>
+          </div>
+          <div class="feature-card">
+            <h3><i class="fa-solid fa-vial-circle-check"></i> 92 Automated Tests (100% Pass)</h3>
+            <p>Comprehensive Django test suite covering service layers, caption parsers, video converter filters, ingestion workflows, and DRF endpoint status handlers.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quickstart Code Section -->
+      <section style="margin-top: 4.5rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Terminal Quickstart</span>
+          <h2 class="section-title">Installation &amp; Execution</h2>
+        </header>
+        <div class="feature-card reveal" style="padding: 2rem;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color:var(--neo-yellow);">
+            <i class="fa-solid fa-terminal" style="margin-right:0.5rem;"></i> Running Clipper Locally
+          </h3>
+          <pre style="background:#070a0f; border:2px solid var(--border-color); border-radius:8px; padding:1.2rem; overflow-x:auto; font-family:var(--font-mono); font-size:0.88rem; color:#e6edf3; line-height:1.6;"><code># 1. Clone the repository
+git clone https://github.com/Muhammad-1410/Clipper.git
+cd Clipper
+
+# 2. Create and activate virtual environment
+python -m venv .venv
+.\.venv\Scripts\activate   # Windows
+# source .venv/bin/activate # macOS/Linux
+
+# 3. Install core dependencies
+pip install -r requirements.txt
+
+# 4. Verify system checks &amp; run automated test suite (92 tests)
+python manage.py check
+python manage.py test clipper
+
+# 5. Launch Django development server
+python manage.py runserver 127.0.0.1:8000
+
+# Open http://127.0.0.1:8000 in your browser</code></pre>
+        </div>
+      </section>
+
+      <!-- GitHub Repository Link Box -->
+      <section style="margin-top: 4rem;">
+        <header class="skills-header reveal">
+          <span class="section-label">Source Code</span>
+          <h2 class="section-title">GitHub Repository</h2>
+        </header>
+        <div class="feature-card reveal" style="text-align:center; padding: 2.5rem 1.5rem;">
+          <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">
+            <i class="fa-brands fa-github" style="font-size: 2.2rem; vertical-align: middle; margin-right: 0.5rem;"></i>
+            Muhammad-1410 / Clipper
+          </h3>
+          <p style="margin-bottom: 1.5rem; max-width: 600px; margin-inline: auto; color: var(--light-gray);">
+            Explore the complete Python &amp; Django architecture, FFmpeg media processing pipeline, Whisper transcription services, and full studio editor on GitHub.
+          </p>
+          <a href="https://github.com/Muhammad-1410/Clipper" target="_blank" rel="noopener noreferrer"
+            class="btn btn-primary">
+            <i class="fa-brands fa-github" aria-hidden="true"></i> Open GitHub Repository
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 <span>Muhammad Butt</span> — Clipper AI Video Generator</p>
+        <a href="../index.html#projects" class="btn btn-secondary btn-sm">Back to Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1763,6 +1763,256 @@ details.faq-item[open] summary.faq-question i.faq-icon {
 
 
 /* ═══════════════════════════════════════════════════════════
+   PROJECT DETAIL PAGES (CASE STUDIES)
+═══════════════════════════════════════════════════════════ */
+.project-detail-hero {
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0 2.5rem 0;
+  position: relative;
+  border-bottom: 3px solid var(--neo-black);
+  background: var(--neo-bg);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb a {
+  color: var(--neo-black);
+  text-decoration: underline;
+  transition: color var(--dur-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--neo-pink);
+}
+
+.breadcrumb span {
+  color: var(--mid-gray);
+}
+
+.project-detail-title {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  text-transform: uppercase;
+  color: var(--neo-black);
+  line-height: 1.15;
+  margin: 1rem 0 0.8rem 0;
+  word-break: break-word;
+}
+
+.project-detail-tagline {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #222222;
+  max-width: 850px;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Project Meta Grid */
+.project-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.meta-item {
+  background: var(--neo-white);
+  border: 2px solid var(--neo-black);
+  border-radius: 6px;
+  box-shadow: var(--shadow-badge);
+  padding: 1rem 1.2rem;
+  transition: transform var(--dur-fast) var(--ease-snappy);
+}
+
+.meta-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-card);
+}
+
+.meta-item h4 {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #555555;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+}
+
+.meta-item p {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--neo-black);
+  margin: 0;
+}
+
+/* Project Showcase & Main Screenshot */
+.project-showcase {
+  padding: 3rem 0 clamp(4rem, 8vw, 6rem) 0;
+}
+
+.main-screenshot-container {
+  position: relative;
+  border: var(--border-thick);
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  background: var(--neo-black);
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: transform var(--dur-med) var(--ease-snappy);
+}
+
+.main-screenshot-container:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.main-screenshot-container img {
+  width: 100%;
+  display: block;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Gallery Grid & Page Cards */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+.page-card {
+  background: var(--neo-white);
+  border: var(--border-thick);
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--dur-fast) var(--ease-snappy);
+}
+
+.page-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.page-card-img-wrapper {
+  position: relative;
+  border-bottom: 3px solid var(--neo-black);
+  overflow: hidden;
+  background: var(--neo-black);
+  cursor: pointer;
+}
+
+.page-card-img-wrapper img {
+  width: 100%;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  transition: transform var(--dur-med) var(--ease-snappy);
+}
+
+.page-card:hover .page-card-img-wrapper img {
+  transform: scale(1.03);
+}
+
+.page-card-body {
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.page-card-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--neo-black);
+  background: var(--neo-yellow);
+  border: 2px solid var(--neo-black);
+  box-shadow: 2px 2px 0px var(--neo-black);
+  padding: 3px 8px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: 0.6rem;
+}
+
+.page-card-title {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: var(--neo-black);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.page-card-desc {
+  font-size: 0.9rem;
+  color: #333333;
+  line-height: 1.6;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Features Grid & Feature Cards */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.8rem;
+}
+
+.feature-card {
+  background: var(--neo-white);
+  border: var(--border-thick);
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+  padding: 1.6rem;
+  transition: transform var(--dur-fast) var(--ease-snappy);
+}
+
+.feature-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  color: var(--neo-black);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feature-card h3 i {
+  color: var(--neo-pink);
+}
+
+.feature-card p {
+  font-size: 0.92rem;
+  color: #333333;
+  line-height: 1.65;
+  margin: 0;
+}
+
+
+
+/* ═══════════════════════════════════════════════════════════
    RESPONSIVE BREAKPOINTS & MOBILE OVERFLOW FIXES
 ═══════════════════════════════════════════════════════════ */
 @media (max-width: 992px) {
